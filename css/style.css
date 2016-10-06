@@ -25,6 +25,8 @@ table {
 		background-color: #fff;
 		font-family: 'Montserrat', helvetica, tahoma, arial, sans-serif;
 		font-size: 14px;
+		color: #333;
+		margin: 0;
 	}
 
 	header {
@@ -38,7 +40,7 @@ table {
 	}
 
 	.link:hover {
-		color: #00838F;
+		color: #50d9e5;
 	}
 
 	h1 {
@@ -53,8 +55,6 @@ table {
 		color: #333;
 		font-size: 275%;
 		font-family: 'Montserrat', helvetica, tahoma, arial, sans-serif;
-		text-transform: uppercase;
-		text-shadow: -1px 0px 2px rgba(150, 150, 150, 0.69);
 	}
 
 	#portfolio  h2 {
@@ -123,8 +123,8 @@ table {
 		-moz-background-size: cover;
 		-o-background-size: cover;
 		background-size: cover;
-		height: 700px;
-		position: relative;
+		height: 550px;
+	  position: relative;
 
 	}
 
@@ -148,8 +148,8 @@ table {
 
 	.welcome-text {
 		color: #fff;
-		font-family: helvetica, tahoma, arial, sans-serif;
-    font-size: 5em;
+		font-family: 'Montserrat', helvetica, tahoma, arial, sans-serif;
+    font-size: 5.7em;
 		line-height: 100%;
     margin-top: auto;
 	}
@@ -195,7 +195,6 @@ table {
 		max-width: 20%;
 		margin-bottom: 4em;
 		text-align: center;
-		border-radius: 10%;
 	}
 
 	.profile-text {
@@ -247,9 +246,9 @@ table {
 		margin-right: 2em;
 	}
 
-	.code-or-web ul {
+	.code-or-web > ul {
 		padding: 0;
-		list-style: none;
+		list-style-type: none;
 	}
 
 	.grid {
@@ -313,8 +312,8 @@ table {
 	nav {
 		display: block;
 		float: right;
-		font-size: 82%;
-		line-height: 50px;
+		font-size: 18px;
+		line-height: 35px;
 		text-align: right;
 		width: 70%;
 	}
@@ -360,8 +359,8 @@ table {
 
 	.logo-text {
 		color: #fff;
-		font-size: 150%;
-		line-height: 50px;
+		font-size: 22px;
+		line-height: 48px;
 		padding-left: 10px;
 		text-transform: uppercase;
     margin-top: 10px;
