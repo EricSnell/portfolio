@@ -1,3 +1,5 @@
+1102 X 647
+
 ### OLEX NOTES
 
 ## Eric Snell
@@ -23,7 +25,7 @@ fonts as well e.g. `body { color: #333; }`.
 Nav feels small, You can make it big and opaque and it's still be fine,
 I'd play with that.
 
-I think the github + demo buttons are a little YUGE. You should add the 
+I think the github + demo buttons are a little YUGE. You should add the
 text like "Demo" and "Source & Info" or something like that. Add titles.
 For description / tech used you can use your `readme.md` files in github
 and keep your portfolio clean. But I still think you need titles here.
