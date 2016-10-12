@@ -40,10 +40,15 @@ table {
 		text-decoration: none;
 		color: #3F51B5;
 		font-weight: bold;
+		font-size: 28px;
 	}
 
 	.link:hover {
 		color: #50d9e5;
+		-webkit-transition: all 0.1s ease-in-out;
+		-moz-transition: all 0.1s ease-in-out;
+		-o-transition: all 0.1s ease-in-out;
+		transition: all 0.1s ease-in-out;
 	}
 
 	h1 {
@@ -75,7 +80,7 @@ table {
 	}
 
 	.profile-text {
-		line-height: 1.5;
+		line-height: 2;
 		margin: 3em auto 5em;
 		font-size: 22px;
 		text-align: center;
@@ -256,6 +261,10 @@ table {
 		float: left;
 	}
 
+	.link {
+		font-size: 26px;
+	}
+
 	h2 {
 		font-size: 40px;
 	}
@@ -270,7 +279,7 @@ table {
 	}
 
 	.profile-text {
-		font-size: 18px;
+		font-size: 20px;
 		line-height: 1.7;
 		margin: 0 auto 5em;
 		width: 57%;
@@ -346,7 +355,7 @@ table {
  */
 
 @media only screen and (min-width: 1140px) {
-	
+
 	#portfolio {
     background-color: #333;
 	}
@@ -508,6 +517,10 @@ table {
 		font-size: 20px;
 		line-height: 2;
 		width: 60%;
+	}
+
+	.link {
+		font-size: 26px;
 	}
 
 }
