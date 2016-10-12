@@ -8,9 +8,6 @@ ol, ul {
 	padding: 0;
 	list-style-type: none;
 }
-blockquote, q {
-	quotes: none;
-}
 
 table {
 	border-collapse: collapse;
@@ -18,8 +15,13 @@ table {
 }
 
 
-/**  MOBILE LAYOUT **/
-@media only screen and (min-width : 320px) {
+/**
+ *
+ * MOBILE LAYOUT
+ *
+ */
+
+@media only screen and (min-width: 280px) {
 
 	/**  M-BASE  **/
 	body {
@@ -28,34 +30,6 @@ table {
 		font-size: 14px;
 		color: #333;
 		margin: 0;
-	}
-
-	.code-or-web li {
-		display: block;
-	}
-
-	.code-or-web h3 {
-		color: white;
-		font-size: 24px;
-	}
-
-	.code-or-web button {
-		width: 250px;
-		padding: 20px 0;
-		background-color: white;
-		border: none;
-		font-size: 18px;
-	}
-
-	.code-button {
-		margin-top: 1em;
-	}
-	.demo-button {
-		margin-bottom: 2em;
-	}
-
-	a button:hover {
-		background-color: #3F51B5
 	}
 
 	header {
@@ -82,11 +56,11 @@ table {
 
 	h2 {
 		color: #333;
-		font-size: 275%;
+		font-size: 50px;
 		font-family: 'Montserrat', helvetica, tahoma, arial, sans-serif;
 	}
 
-	#portfolio  h2 {
+	#portfolio h2 {
 		color: #fff;
 	}
 
@@ -94,21 +68,28 @@ table {
 		max-width: 100%;
 	}
 
-	.code-or-web button {
-		width: 250px;
-		padding: 30px 0;
-		margin: .5em;
+	.profile-image {
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
 	}
 
-	button:hover {
-		color: white;
+	.profile-text {
+		line-height: 1.5;
+		margin: 3em auto 5em;
+		font-size: 22px;
+		text-align: center;
 	}
-
 
 
 	/**  M-LAYOUT  **/
 	.clear-it {
 		clear: both;
+	}
+
+	.project-image {
+		width: 100%;
+		margin: auto;
 	}
 
 	.code-or-web {
@@ -118,7 +99,42 @@ table {
 	}
 
 	.code-or-web li {
-		display: inline-block;
+		display: block;
+	}
+
+	.code-or-web button {
+		width: 320px;
+		padding: 25px 0;
+		margin: .3em auto;
+		background-color: white;
+		border: none;
+		font-size: 26px;
+		border-radius: 4px;
+		font: 'Montserrat', helvetica, tahoma, arial, sans-serif;
+		-webkit-transition: all 0.1s ease-in-out;
+		-moz-transition: all 0.1s ease-in-out;
+		-o-transition: all 0.1s ease-in-out;
+		transition: all 0.1s ease-in-out;
+	}
+
+	.code-or-web h3 {
+		color: white;
+		font-size: 35px;
+	}
+
+	.code-button {
+		margin-top: 1em;
+	}
+	.demo-button {
+		margin-bottom: 8em;
+	}
+
+	a button:hover {
+		background-color: #3F51B5
+	}
+
+	button:hover {
+		color: white;
 	}
 
 	.content-container {
@@ -135,7 +151,7 @@ table {
 	.options-container {
 		display: table;
 		margin: 0 auto;
-		width: 100%
+		width: 100%;
 	}
 
 	.page {
@@ -161,7 +177,6 @@ table {
 		background-size: cover;
 		height: 550px;
 	  position: relative;
-
 	}
 
 	#portfolio {
@@ -191,7 +206,17 @@ table {
 	}
 
 	.icon {
-		max-width: 25%;
+		max-width: 13%;
+		margin: 3em 1em;
+		cursor: pointer;
+	}
+
+	.icon:hover {
+		opacity: 0.6;
+		-webkit-transition: opacity 0.1s ease-in-out;
+    -moz-transition: opacity 0.1s ease-in-out;
+    -o-transition: opacity 0.1s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
 	}
 
 	.page-title {
@@ -201,16 +226,21 @@ table {
 		margin: 5em auto;
 	}
 
-	.profile-text {
+	.contact-text {
+		font-size: 20px;
 		text-align: center;
-		line-height: 2;
-		margin-bottom: 5em;
-		font-size: 22px;
 	}
 
+}
 
-/**  TABLET LAYOUT  **/
-@media only screen and (min-width : 768px) {
+
+/**
+ *
+ * TABLET LAYOUT
+ *
+ */
+
+@media only screen and (min-width: 850px) {
 	/**  T-THEME  **/
 	.welcome {
 		margin: -200px 0 0 -200px;
@@ -220,29 +250,72 @@ table {
 
 	.welcome-text {
 		padding-top: 125px;
-
 	}
 
 	.profile-image, .profile-text {
 		float: left;
 	}
 
+	h2 {
+		font-size: 40px;
+	}
+
+	.code-or-web h3 {
+		font-size: 30px;
+	}
+
 	.profile-image {
-		max-width: 20%;
-		margin-bottom: 4em;
-		text-align: center;
+		margin: 0 5em 5em 0;
+		max-width: 30%;
 	}
 
 	.profile-text {
-		margin-left: 3%;
-		margin-bottom: 5em;
-		text-align: left;
+		font-size: 18px;
+		line-height: 1.7;
+		margin: 0 auto 5em;
 		width: 57%;
+		text-align: left;
+	}
+
+
+	.code-or-web button {
+		width: 300px;
+		padding: 20px 0;
+		background-color: white;
+		border: none;
+		font-size: 24px;
+		border-radius: 4px;
+	}
+
+	.demo-button {
+		margin-bottom: 5em;
+	}
+
+	li.app-title {
+		display: block;
+	}
+
+	li.code-button,
+	li.demo-button {
+		display: inline-block;
+		margin-right: 15px;
+		margin-left: 15px;
+	}
+
+	a button:hover {
+		background-color: #3F51B5;
+		color: white;
+	}
+
+	.project-image {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 95%;
 	}
 
 	.icon {
-		max-width: 10%;
-		margin: 1em;
+		max-width: 8%;
 	}
 
 	.contact-text {
@@ -255,26 +328,33 @@ table {
 		margin-bottom: 1.5em;
 	}
 
-
-
 	.shadow {
 		-moz-box-shadow: 0 2px 3px #efefef;
 		-webkit-box-shadow: 0 2px 3px #efefef;
 		box-shadow: 0 2px 3px #efefef;
 	}
+
 }
 
 
 
 
-/**  DESKTOP LAYOUT **/
-@media only screen and (min-width : 1140px) {
+/**
+ *
+ * DESKTOP LAYOUT
+ *
+ */
 
-	p {
-		font-size: 22px;
+@media only screen and (min-width: 1140px) {
+
+
+	#portfolio {
+    background-color: #333;
 	}
 
-	.code-or-web li {
+	li.app-title,
+	li.code-button,
+	li.demo-button {
 		display: block;
 	}
 
@@ -284,21 +364,25 @@ table {
 	}
 
 	.code-or-web button {
-		width: 250px;
+		width: 220px;
 		padding: 20px 0;
 		background-color: white;
-		border: none;
 		font-size: 18px;
+		border-radius: 4px;
+	}
+
+	.demo-button {
+		margin-bottom: 0;
 	}
 
 	a button:hover {
-		background-color: #50d9e5
+		background-color: #50d9e5;
 	}
 
 
 	.grid {
 		float: left;
-		margin-bottom: 25px;  /* Aligns the portfolio images. */
+		margin-bottom: 40px;  /* Aligns the portfolio images. */
 		max-width: 49%;
 		position: relative;
 	}
@@ -310,10 +394,11 @@ table {
 	.options-container {
 		height: 100%;
 		opacity: 0;
-		-webkit-transition: opacity 0.3s ease-in-out;
-		-moz-transition: opacity 0.3s ease-in-out;
-		-o-transition: opacity 0.3s ease-in-out;
-		transition: opacity 0.3s ease-in-out;	/* Make fade out more smooth */
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+		-o-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;	/* Make fade out more smooth */
+
 	}
 
 	.right {
@@ -391,15 +476,24 @@ table {
     color: #C5CAE9;
   }
 
+	.project-image {
+		max-width: 100%;
+	}
+
 	.options-container:hover {
 		opacity: .96;
 		background-color: #3F51B5;
+		max-width: 100%;
 	}
 
 
 	/**  D-THEME  **/
 	.icon {
 		max-width: 5%;
+	}
+
+	.profile-image, .profile-text {
+		float: left;
 	}
 
 	.logo-text {
@@ -411,9 +505,10 @@ table {
     margin-top: 10px;
 	}
 
-	.profile-image {
-		max-width: 30%;
-    margin-bottom: 5em;
-		margin-right: 5em;
+	.profile-text {
+		font-size: 20px;
+		line-height: 2;
+		width: 60%;
 	}
+
 }
