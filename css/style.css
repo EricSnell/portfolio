@@ -241,7 +241,7 @@ table {
  *
  */
 
-@media only screen and (min-width: 850px) {
+@media only screen and (min-width: 900px) {
 	/**  T-THEME  **/
 	.welcome {
 		margin: -200px 0 0 -200px;
