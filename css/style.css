@@ -103,12 +103,12 @@ table {
 	}
 
 	.code-or-web button {
-		color: #3F51B5;
+		color: white;
 		width: 100%;
 		padding: 35px 0;
 		margin: .3em auto;
-		background-color: white;
-		border: none;
+		background-color: transparent;
+		border: 1px solid white;
 		font-size: 26px;
 		border-radius: 4px;
 		font: 'Montserrat', helvetica, tahoma, arial, sans-serif;
@@ -132,7 +132,7 @@ table {
 
 	a button:hover {
 		background-color: #3F51B5;
-		color: white;
+		border: 1px solid #3F51B5;
 	}
 
 	button:hover {
@@ -241,7 +241,7 @@ table {
  *
  */
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 850px) {
 	/**  T-THEME  **/
 	.welcome {
 		margin: -200px 0 0 -200px;
@@ -286,9 +286,9 @@ table {
 	.code-or-web button {
 		width: 300px;
 		padding: 20px 0;
-		background-color: white;
-		color: #3F51B5;
-		border: none;
+		background-color: transparent;
+		color: white;
+		border: 1px solid white;
 		font-size: 24px;
 		border-radius: 4px;
 	}
@@ -311,6 +311,7 @@ table {
 	a button:hover {
 		background-color: #3F51B5;
 		color: white;
+		border: 1px solid #3F51B5;
 	}
 
 	.project-image {
@@ -372,6 +373,7 @@ table {
 		width: 220px;
 		padding: 20px 0;
 		background-color: white;
+		color: #333;
 		font-size: 18px;
 		border-radius: 4px;
 	}
