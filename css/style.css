@@ -35,7 +35,6 @@ table {
 		text-decoration: none;
 		color: #3F51B5;
 		font-weight: bold;
-		font-size: 22px;
 	}
 
 	.link:hover {
@@ -231,6 +230,7 @@ table {
 	.contact-text {
 		font-size: 18px;
 		text-align: center;
+		margin-top: -2.4em;
 	}
 
 
@@ -332,11 +332,10 @@ table {
 	.contact-text {
 		text-align: center;
 		max-width: 50%;
-		margin: auto;
+		margin: -1em auto 0;
 	}
 
 	.contact-text p {
-		margin-bottom: 1.5em;
 	}
 
 	.shadow {
