@@ -526,7 +526,9 @@ table {
 	.options-container:hover {
 		opacity: .96;
 		background-color: #3F51B5;
-		max-width: 100%;
+		/* max-width: 100% */
+		width: 101%;		/* 101% makes up for occassional inconsitencies */
+		height: 101%;
 	}
 
 
