@@ -276,7 +276,7 @@ table {
 	}
 
 	.link {
-		font-size: 26px;
+		font-size: 18px;
 	}
 
 	h2 {
@@ -293,7 +293,7 @@ table {
 	}
 
 	.profile-text {
-		font-size: 20px;
+		font-size: 18px;
 		line-height: 1.7;
 		margin: 0 auto 5em;
 		width: 57%;
@@ -551,13 +551,13 @@ table {
 	}
 
 	.profile-text {
-		font-size: 20px;
+		font-size: 18px;
 		line-height: 2;
 		width: 60%;
 	}
 
 	.link {
-		font-size: 22px;
+		font-size: 18px;
 	}
 
 }
