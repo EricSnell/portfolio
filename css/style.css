@@ -392,9 +392,9 @@ table {
 	.code-or-web button {
 		width: 160px;
 		padding: 20px 0;
-		background-color: white;
+		background-color: transparent;
 		border: 1px solid white;
-		color: #333;
+		color: #fff;
 		font-size: 18px;
 		border-radius: 4px;
 	}
@@ -410,7 +410,7 @@ table {
 
 	a button:hover {
 		background-color: #50d9e5;
-		border: 1px solid white;
+		border: 1px solid #50d9e5;
 		color: #fff;
 	}
 
