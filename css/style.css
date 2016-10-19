@@ -372,7 +372,7 @@ table {
  *
  */
 
-@media only screen and (min-width: 1140px) {
+@media only screen and (min-width: 1255px) {
 
 	#portfolio {
     background-color: #333;
@@ -413,7 +413,6 @@ table {
 		border: 1px solid #50d9e5;
 		color: #fff;
 	}
-
 
 	.grid {
 		float: left;
