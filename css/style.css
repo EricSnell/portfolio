@@ -11,6 +11,9 @@ table {
 	border-spacing: 0;
 }
 
+a, button {
+	cursor: pointer;
+}
 
 /**
  *
@@ -19,12 +22,19 @@ table {
  */
 
 	/**  M-BASE  **/
+	a {
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+		-o-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
+	}
+
 	body {
 		background-color: #fff;
 		font-family: 'Montserrat', helvetica, tahoma, arial, sans-serif;
 		font-size: 14px;
 		color: #333;
-		margin: .5;
+		margin: 0;
 	}
 
 	header {
@@ -39,10 +49,6 @@ table {
 
 	.link:hover {
 		color: #50d9e5;
-		-webkit-transition: all 0.1s ease-in-out;
-		-moz-transition: all 0.1s ease-in-out;
-		-o-transition: all 0.1s ease-in-out;
-		transition: all 0.1s ease-in-out;
 	}
 
 	h1 {
@@ -55,7 +61,8 @@ table {
 
 	h2 {
 		color: #333;
-		font-size: 30px;
+		margin-top: -1em;
+		font-size: 35px;
 		font-family: 'Montserrat', helvetica, tahoma, arial, sans-serif;
 	}
 
@@ -108,10 +115,10 @@ table {
 		padding: 25px 0;
 		margin: .3em auto;
 		background-color: #3F51B5;
-		font-size: 26px;
+		font-size: 23px;
 		border: 1px solid #3F51B5;
 		border-radius: 4px;
-		font: 'Montserrat', helvetica, tahoma, arial, sans-serif;
+		font-family: 'Montserrat', helvetica, tahoma, arial, sans-serif;
 		-webkit-transition: all 0.1s ease-in-out;
 		-moz-transition: all 0.1s ease-in-out;
 		-o-transition: all 0.1s ease-in-out;
@@ -187,6 +194,7 @@ table {
 
 	.center-text {
 		text-align: center;
+		margin-bottom: 2.5em;
 	}
 
 	.welcome {
@@ -207,18 +215,21 @@ table {
     margin-top: auto;
 	}
 
-	.icon {
-		max-width: 12%;
-		margin: 3em 1em;
+	i {
+		color: #3F51B5;
 		cursor: pointer;
+		margin: 0 5px;
+		transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -webkit-transition: opacity 0.2s ease-in-out;
 	}
 
-	.icon:hover {
+	i:hover {
 		opacity: 0.6;
-		-webkit-transition: opacity 0.1s ease-in-out;
-    -moz-transition: opacity 0.1s ease-in-out;
-    -o-transition: opacity 0.1s ease-in-out;
-    transition: opacity 0.1s ease-in-out;
+		-webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
 	}
 
 	.page-title {
@@ -258,9 +269,7 @@ table {
 
 @media only screen and (min-width: 900px) {
 
-	body {
-		margin: 0;
-	}
+
 	/**  T-THEME  **/
 	.welcome {
 		margin: -200px 0 0 -200px;
@@ -280,10 +289,6 @@ table {
 		font-size: 18px;
 	}
 
-	h2 {
-		font-size: 40px;
-	}
-
 	.code-or-web h3 {
 		font-size: 30px;
 	}
@@ -300,7 +305,6 @@ table {
 		width: 57%;
 		text-align: left;
 	}
-
 
 	.code-or-web button {
 		width: 300px;
@@ -339,23 +343,10 @@ table {
 		max-width: 95%;
 	}
 
-	.icon {
-		max-width: 8%;
-	}
-
-	.contact-text {
-		text-align: center;
-		max-width: 50%;
-		margin: -1em auto 0;
-	}
-
-	.contact-text p {
-	}
-
 	.shadow {
-		-moz-box-shadow: 0 2px 3px #efefef;
-		-webkit-box-shadow: 0 2px 3px #efefef;
-		box-shadow: 0 2px 3px #efefef;
+		-moz-box-shadow: 0 2px 3px #333;
+		-webkit-box-shadow: 0 2px 3px #333;
+		box-shadow: 0 2px 3px #333;
 	}
 
 	.project-text {
@@ -377,6 +368,7 @@ table {
 
 	#portfolio {
     background-color: #333;
+		padding-bottom: 5em;
 	}
 
 	li.app-title,
@@ -467,8 +459,6 @@ table {
     transition: all 0.3s ease-in-out;
   }
 
-
-
 	#logo {
 		float: left;
 		width: 30%;
@@ -527,9 +517,7 @@ table {
 	.options-container:hover {
 		opacity: .97;
 		background-color: #3F51B5;
-		/* max-width: 100% */
-		width: 101%;		/* 101% makes up for occassional inconsitencies */
-		height: 101%;
+		max-width: 100%;
 		border-radius: 2%;
 	}
 
