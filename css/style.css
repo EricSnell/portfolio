@@ -421,8 +421,7 @@ a, button {
 	}
 
 	.options-container {
-		height: 100%;
-		opacity: 0;
+		height: 300px;
 		-webkit-transition: all 0.2s ease-in-out;
 		-moz-transition: all 0.2s ease-in-out;
 		-o-transition: all 0.2s ease-in-out;
@@ -484,13 +483,7 @@ a, button {
 
 
 	/**  D-STATE  **/
-	.grid-hover {
-		height: 100%;
-		position: absolute;
-		  top: 0;
-		  right: 0;
-		width: 100%;
-	}
+
 
 	nav ul li a {
 		color: #fff;
@@ -517,7 +510,6 @@ a, button {
 
 	.options-container:hover {
 		opacity: .97;
-		background-color: #3F51B5;
 		max-width: 100%;
 		border-radius: 2%;
 	}
