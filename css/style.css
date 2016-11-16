@@ -310,7 +310,8 @@ a, button {
 	.code-or-web button {
 		width: 300px;
 		padding: 20px 0;
-		background-color: #3F51B5;
+		border: 1px solid white;
+		background-color: transparent;
 		color: white;
 		font-size: 24px;
 		border-radius: 4px;
@@ -332,9 +333,9 @@ a, button {
 	}
 
 	a button:hover {
-		background-color: #3F51B5;
-		border: 1px solid white;
-		color: white;
+		background-color: #FFF;
+		border: 1px solid #FFF;
+		color: #333;
 	}
 
 	.project-image {
