@@ -1,3 +1,16 @@
+html {
+  font-family: "Rubik", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 62.5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
 *,
 *::before,
 *::after {
@@ -5,6 +18,72 @@
   margin: 0;
   outline: 0;
   border: 0;
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  list-style: none;
+}
+
+.site-header {
+  background-color: #191a1d;
+}
+
+.site-header__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 4rem;
+}
+
+.site-header .site-header__logo {
+  color: #ffffff;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  font-weight: bold;
+}
+
+.site-header .site-header__logo::after {
+  content: "";
+  display: block;
+  width: 30%;
+  margin-top: 1.5rem;
+  padding: 0.3rem 0;
+  border-radius: 0.3rem;
+  background-color: #4b6cc1;
+}
+
+.site-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 55%;
+  color: #919191;
+  font-size: 2.3rem;
+}
+
+.site-menu__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 0.8rem 0;
+}
+
+.site-menu__item {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.site-menu a:hover {
+  color: #ffffff;
+  cursor: pointer;
 }
