@@ -23,6 +23,16 @@ body {
   list-style: none;
 }
 
+.site-section {
+  border: 1px dashed black;
+}
+
+.site-section__inner {
+  border: 1px solid red;
+  max-width: 100rem;
+  margin: 0 auto;
+}
+
 .site-header {
   background-color: #191a1d;
 }
@@ -44,13 +54,13 @@ body {
   font-size: 2.5rem;
   text-transform: uppercase;
   letter-spacing: 0.25rem;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .site-header .site-header__logo::after {
   content: "";
   display: block;
-  width: 30%;
+  width: 25%;
   margin-top: 1.5rem;
   padding: 0.3rem 0;
   border-radius: 0.3rem;
@@ -78,6 +88,7 @@ body {
 }
 
 .site-menu__item {
+  text-align: right;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -86,4 +97,47 @@ body {
 .site-menu a:hover {
   color: #ffffff;
   cursor: pointer;
+}
+
+.site-banner {
+  background-color: #191a1d;
+}
+
+.site-banner__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 4rem;
+}
+
+.about {
+  max-width: 60rem;
+  border: 1px solid blue;
+}
+
+.about__header {
+  color: #ffffff;
+  margin-bottom: 2.5rem;
+  font-size: 6rem;
+  font-weight: 400;
+}
+
+.about__txt {
+  color: #919191;
+  line-height: 1.4;
+  font-size: 3rem;
+}
+
+.about__img {
+  border: 1px solid blue;
+  min-width: 40rem;
+  text-align: center;
 }
