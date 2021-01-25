@@ -28,10 +28,27 @@ body {
   border: 1px dashed black;
 }
 
+.site-section--light {
+  background-color: #919191;
+}
+
+.site-section--dark {
+  background-color: #191a1d;
+}
+
 .site-section__inner {
   border: 1px solid red;
   max-width: 100rem;
   margin: 0 auto;
+}
+
+.site-section__header {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 5rem;
+  font-weight: 500;
+  margin-bottom: 8rem;
+  color: #5e5e5e;
 }
 
 .site-header {
@@ -103,6 +120,7 @@ body {
 .site-banner {
   background-color: #191a1d;
   padding: 11rem 0;
+  margin-bottom: 7rem;
 }
 
 .site-banner__inner {
@@ -145,6 +163,30 @@ body {
 
 .about__img {
   text-align: center;
+}
+
+.skills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.skills__item {
+  width: 33.33%;
+  width: calc(100% / 3);
+  text-align: center;
+}
+
+.skills__img {
+  max-width: 14rem;
+  margin-bottom: 1.5rem;
+}
+
+.skills__name {
+  font-size: 2.8rem;
+  margin-bottom: 7rem;
 }
 
 .btn {
