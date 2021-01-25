@@ -34,8 +34,6 @@ body {
 }
 
 .site-section {
-  border: 1px dashed black;
-
   &--light {
     background-color: $primary-light-background;
   }
@@ -45,7 +43,6 @@ body {
   }
 
   &__inner {
-    border: 1px solid red;
     max-width: 100rem;
     margin: 0 auto;
   }
@@ -57,6 +54,10 @@ body {
     font-weight: 500;
     margin-bottom: $margin-btm-large;
     color: $primary-dark-text;
+  }
+
+  &:last-of-type {
+    padding-bottom: $margin-btm-large * 1.8;
   }
 }
 
@@ -117,7 +118,7 @@ body {
 .site-banner {
   background-color: $primary-dark;
   padding: 11rem 0;
-  margin-bottom: 7rem;
+  margin-bottom: 5rem;
 
   &__inner {
     display: flex;
@@ -208,6 +209,53 @@ body {
   }
 }
 
+.contact {
+  width: 70%;
+
+  &__header {
+    color: $primary-dark-header;
+    font-size: 5rem;
+    font-weight: 400;
+    margin-bottom: $margin-btm;
+  }
+
+  &__txt {
+    font-size: 2.5rem;
+    color: $primary-light-header;
+    margin-bottom: $margin-btm;
+    font-weight: 300;
+  }
+}
+
+.social-links {
+  flex: 1;
+
+  &__inner {
+    align-content: stretch;
+  }
+
+  &__item {
+    padding: 1.8rem 0;
+  }
+
+  &__img {
+    width: 2.3rem;
+    margin-right: 1.3rem;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $primary-light-header;
+    font-weight: 500;
+    font-size: 2.3rem;
+    text-transform: uppercase;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
 .site-footer {
   background-color: #101114;
   padding: 5rem 0;
@@ -250,6 +298,16 @@ body {
 
 // Utility classes
 .slanted-bottom {
-  padding-bottom: 18rem;
+  padding-bottom: 15rem;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 100px));
+}
+
+.slanted-top {
+  padding-top: 15rem;
+  clip-path: polygon(0 0, 100% 100px, 100% 100%, 0 100%);
+}
+
+.flex {
+  display: flex;
+  align-items: center;
 }

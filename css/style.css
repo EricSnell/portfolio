@@ -24,10 +24,6 @@ body {
   list-style: none;
 }
 
-.site-section {
-  border: 1px dashed black;
-}
-
 .site-section--light {
   background-color: #f6f6f6;
 }
@@ -37,7 +33,6 @@ body {
 }
 
 .site-section__inner {
-  border: 1px solid red;
   max-width: 100rem;
   margin: 0 auto;
 }
@@ -49,6 +44,10 @@ body {
   font-weight: 500;
   margin-bottom: 8rem;
   color: #5e5e5e;
+}
+
+.site-section:last-of-type {
+  padding-bottom: 14.4rem;
 }
 
 .site-header {
@@ -120,7 +119,7 @@ body {
 .site-banner {
   background-color: #191a1d;
   padding: 11rem 0;
-  margin-bottom: 7rem;
+  margin-bottom: 5rem;
 }
 
 .site-banner__inner {
@@ -225,6 +224,56 @@ body {
   text-align: center;
 }
 
+.contact {
+  width: 70%;
+}
+
+.contact__header {
+  color: #ffffff;
+  font-size: 5rem;
+  font-weight: 400;
+  margin-bottom: 4rem;
+}
+
+.contact__txt {
+  font-size: 2.5rem;
+  color: #919191;
+  margin-bottom: 4rem;
+  font-weight: 300;
+}
+
+.social-links {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.social-links__inner {
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+}
+
+.social-links__item {
+  padding: 1.8rem 0;
+}
+
+.social-links__img {
+  width: 2.3rem;
+  margin-right: 1.3rem;
+}
+
+.social-links__link {
+  text-decoration: none;
+  color: #919191;
+  font-weight: 500;
+  font-size: 2.3rem;
+  text-transform: uppercase;
+}
+
+.social-links__link:hover {
+  cursor: pointer;
+}
+
 .site-footer {
   background-color: #101114;
   padding: 5rem 0;
@@ -266,7 +315,22 @@ body {
 }
 
 .slanted-bottom {
-  padding-bottom: 18rem;
+  padding-bottom: 15rem;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 100px));
           clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 100px));
+}
+
+.slanted-top {
+  padding-top: 15rem;
+  -webkit-clip-path: polygon(0 0, 100% 100px, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 100px, 100% 100%, 0 100%);
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
