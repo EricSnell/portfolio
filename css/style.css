@@ -202,6 +202,21 @@ body {
   border-radius: 5rem;
 }
 
+.site-footer {
+  background-color: #101114;
+  padding: 5rem 0;
+}
+
+.site-footer__inner {
+  text-align: center;
+}
+
+.site-footer__copyright {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #919191;
+}
+
 .slanted-bottom {
   padding-bottom: 18rem;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 100px));

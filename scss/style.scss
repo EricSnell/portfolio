@@ -187,6 +187,21 @@ body {
   }
 }
 
+.site-footer {
+  background-color: #101114;
+  padding: 5rem 0;
+
+  &__inner {
+    text-align: center;
+  }
+
+  &__copyright {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: $primary-light-header;
+  }
+}
+
 // Utility classes
 .slanted-bottom {
   padding-bottom: 18rem;
