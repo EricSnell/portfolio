@@ -2,9 +2,12 @@
 $primary-dark: #191a1d;
 $primary-dark-text: #5e5e5e;
 $primary-dark-header: #ffffff;
+$primary-light-background: #f6f6f6;
 $primary-accent: #4b6cc1;
 $primary-light-header: #919191;
 $margin-btm: 4rem;
+$margin-btm-large: 8rem;
+$margin-btm-small: 1.5rem;
 
 html {
   font-family: "Rubik", sans-serif;
@@ -34,7 +37,7 @@ body {
   border: 1px dashed black;
 
   &--light {
-    background-color: $primary-light-header;
+    background-color: $primary-light-background;
   }
 
   &--dark {
@@ -52,7 +55,7 @@ body {
     text-transform: uppercase;
     font-size: 5rem;
     font-weight: 500;
-    margin-bottom: $margin-btm * 2;
+    margin-bottom: $margin-btm-large;
     color: $primary-dark-text;
   }
 }
@@ -165,7 +168,7 @@ body {
 
   &__img {
     max-width: 14rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: $margin-btm-small;
   }
 
   &__name {
@@ -174,16 +177,34 @@ body {
   }
 }
 
-.btn {
-  display: inline-block;
-  text-decoration: none;
-  background-color: $primary-accent;
-  color: $primary-dark-header;
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
-  &--large {
-    font-size: 3rem;
-    padding: 2.3rem 4rem;
-    border-radius: 5rem;
+  &__item {
+    padding: 0 5rem;
+    margin-bottom: $margin-btm * 1.5;
+    text-align: center;
+  }
+
+  &__img {
+    border-radius: 2rem;
+    margin-bottom: $margin-btm-small;
+  }
+
+  &__name {
+    font-size: 2.7rem;
+    margin-bottom: 1rem;
+  }
+
+  &__desc {
+    font-size: 2rem;
+    margin-bottom: $margin-btm-small;
+  }
+
+  &__ctas {
+    text-align: center;
   }
 }
 
@@ -199,6 +220,31 @@ body {
     font-size: 1.8rem;
     font-weight: 300;
     color: $primary-light-header;
+  }
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  background-color: $primary-accent;
+  color: $primary-dark-header;
+
+  &--large {
+    font-size: 3rem;
+    padding: 2.3rem 4rem;
+    border-radius: 5rem;
+  }
+
+  &--small {
+    font-size: 2rem;
+    padding: 1.5rem 5rem;
+    margin: 0 1rem;
+    border-radius: 3rem;
+  }
+
+  &--dark {
+    background-color: $primary-dark;
+    color: $primary-dark-header;
   }
 }
 
