@@ -35,6 +35,7 @@ body {
 }
 
 .site-section {
+  border: 1px solid red;
   &--light {
     background-color: $primary-light-background;
   }
@@ -44,21 +45,24 @@ body {
   }
 
   &__inner {
+    border: 1px dashed;
     max-width: 100rem;
     margin: 0 auto;
   }
 
   &__header {
+    border: 1px solid green;
+    padding-bottom: $margin-btm-large;
     text-align: center;
     text-transform: uppercase;
     font-size: 5rem;
     font-weight: 500;
-    margin-bottom: $margin-btm-large;
+    //margin-bottom: $margin-btm-large;
     color: $primary-dark-text;
   }
 
   &:last-of-type {
-    padding-bottom: $margin-btm-large * 1.8;
+    //padding-bottom: $margin-btm-large * 1.8;
   }
 }
 
@@ -117,9 +121,11 @@ body {
 }
 
 .site-banner {
+  border: 1px solid white;
   background-color: $primary-dark;
-  padding: 11rem 0;
-  margin-bottom: 5rem;
+  //padding-top: 11rem;
+  //margin-bottom: 5rem;
+  //padding-bottom: 2rem;
 
   &__inner {
     display: flex;
@@ -127,7 +133,7 @@ body {
     align-items: center;
     max-width: 120rem;
     margin: 0 auto;
-    padding: 4rem;
+    //padding: 4rem;
   }
 }
 
@@ -163,19 +169,20 @@ body {
   flex-wrap: wrap;
 
   &__item {
+    border: 1px solid;
     width: 33.33%; // older browsers
     width: calc(100% / 3);
     text-align: center;
   }
 
   &__img {
-    max-width: 14rem;
+    max-width: 13rem;
     margin-bottom: $margin-btm-small;
   }
 
   &__name {
     font-size: 2.8rem;
-    margin-bottom: 7rem;
+    //margin-bottom: 6rem;
   }
 }
 
@@ -185,9 +192,9 @@ body {
   justify-content: center;
 
   &__item {
-    margin-right: $margin-btm-small;
-    margin-bottom: $margin-btm * 1.5;
-    padding-bottom: $margin-btm;
+    // margin-right: $margin-btm-small;
+    // margin-bottom: $margin-btm * 1.5;
+    // padding-bottom: $margin-btm;
     text-align: center;
     border-radius: 0.6rem;
     overflow: hidden;
@@ -323,7 +330,7 @@ body {
 }
 
 .slanted-top {
-  padding-top: 15rem;
+  padding-top: 11rem;
   clip-path: polygon(0 0, 100% 100px, 100% 100%, 0 100%);
 }
 

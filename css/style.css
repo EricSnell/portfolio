@@ -24,6 +24,10 @@ body {
   list-style: none;
 }
 
+.site-section {
+  border: 1px solid red;
+}
+
 .site-section--light {
   background-color: #f6f6f6;
 }
@@ -33,21 +37,19 @@ body {
 }
 
 .site-section__inner {
+  border: 1px dashed;
   max-width: 100rem;
   margin: 0 auto;
 }
 
 .site-section__header {
+  border: 1px solid green;
+  padding-bottom: 8rem;
   text-align: center;
   text-transform: uppercase;
   font-size: 5rem;
   font-weight: 500;
-  margin-bottom: 8rem;
   color: #5e5e5e;
-}
-
-.site-section:last-of-type {
-  padding-bottom: 14.4rem;
 }
 
 .site-header {
@@ -117,9 +119,8 @@ body {
 }
 
 .site-banner {
+  border: 1px solid white;
   background-color: #191a1d;
-  padding: 11rem 0;
-  margin-bottom: 5rem;
 }
 
 .site-banner__inner {
@@ -134,7 +135,6 @@ body {
           align-items: center;
   max-width: 120rem;
   margin: 0 auto;
-  padding: 4rem;
 }
 
 .about {
@@ -173,19 +173,19 @@ body {
 }
 
 .skills__item {
+  border: 1px solid;
   width: 33.33%;
   width: calc(100% / 3);
   text-align: center;
 }
 
 .skills__img {
-  max-width: 14rem;
+  max-width: 13rem;
   margin-bottom: 1.5rem;
 }
 
 .skills__name {
   font-size: 2.8rem;
-  margin-bottom: 7rem;
 }
 
 .projects {
@@ -200,9 +200,6 @@ body {
 }
 
 .projects__item {
-  margin-right: 1.5rem;
-  margin-bottom: 6rem;
-  padding-bottom: 4rem;
   text-align: center;
   border-radius: 0.6rem;
   overflow: hidden;
@@ -341,7 +338,7 @@ body {
 }
 
 .slanted-top {
-  padding-top: 15rem;
+  padding-top: 11rem;
   -webkit-clip-path: polygon(0 0, 100% 100px, 100% 100%, 0 100%);
           clip-path: polygon(0 0, 100% 100px, 100% 100%, 0 100%);
 }
