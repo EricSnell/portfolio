@@ -200,24 +200,33 @@ body {
 }
 
 .projects__item {
-  padding: 0 5rem;
+  margin-right: 1.5rem;
   margin-bottom: 6rem;
+  padding-bottom: 4rem;
   text-align: center;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.1);
+  border-bottom: 0.6rem solid #4b6cc1;
 }
 
 .projects__img {
-  border-radius: 2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 4rem;
 }
 
 .projects__name {
   font-size: 2.7rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
 }
 
 .projects__desc {
   font-size: 2rem;
-  margin-bottom: 1.5rem;
+  font-weight: 300;
+  color: #5e5e5e;
+  margin-bottom: 2.5rem;
 }
 
 .projects__ctas {
@@ -307,11 +316,22 @@ body {
   padding: 1.5rem 5rem;
   margin: 0 1rem;
   border-radius: 3rem;
+  background-color: transparent;
+  color: #191a1d;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
 }
 
-.btn--dark {
-  background-color: #191a1d;
+.btn--small:hover {
+  background-color: #4b6cc1;
   color: #ffffff;
+}
+
+.btn--dark:hover {
+  color: #ffffff;
+  background-color: #191a1d;
 }
 
 .slanted-bottom {
