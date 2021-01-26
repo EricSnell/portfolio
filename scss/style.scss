@@ -211,14 +211,25 @@ body {
     }
   }
 
-  &__img {
+  &__img--wrapper {
+    text-align: center;
+
     @include media-sm {
       order: 1;
       margin-bottom: $margin-btm;
+      flex-shrink: 1;
     }
     @include media-md {
       order: 1;
       margin-bottom: $margin-btm;
+    }
+  }
+
+  &__img {
+    width: 35rem;
+
+    @include media-sm {
+      width: 28rem;
     }
   }
 
