@@ -44,7 +44,7 @@ body {
 
 .site-section__header {
   border: 1px solid green;
-  padding-bottom: 8rem;
+  padding: 4rem 0;
   text-align: center;
   text-transform: uppercase;
   font-size: 5rem;
@@ -173,10 +173,11 @@ body {
 }
 
 .skills__item {
-  border: 1px solid;
+  border: 1px dashed;
   width: 33.33%;
   width: calc(100% / 3);
   text-align: center;
+  margin-bottom: 4rem;
 }
 
 .skills__img {
@@ -200,6 +201,8 @@ body {
 }
 
 .projects__item {
+  margin: 0 calc(4rem/ 2) 4rem;
+  padding-bottom: 4rem;
   text-align: center;
   border-radius: 0.6rem;
   overflow: hidden;
