@@ -10,6 +10,7 @@ $margin-btm-large: 8rem;
 $margin-btm-med: 2.5rem;
 $margin-btm-small: 1.5rem;
 $section-padding: calc(#{$margin-btm * 2});
+$section-padding-lg: calc(#{$section-padding} + #{$margin-btm});
 
 html {
   font-family: "Rubik", sans-serif;
@@ -123,7 +124,7 @@ body {
 .site-banner {
   border: 1px solid white;
   background-color: $primary-dark;
-  padding: calc(#{$section-padding} + #{$margin-btm}) 0;
+  padding: $section-padding-lg 0;
 
   &__inner {
     display: flex;
@@ -247,12 +248,28 @@ body {
   }
 
   &__item {
+    display: flex;
+    align-items: center;
     padding: 1.8rem 0;
+
+    &:hover {
+      cursor: pointer;
+      & > * {
+        color: $primary-dark-header;
+      }
+
+      & > img {
+        transform: translateY(-3px);
+        filter: invert(1);
+      }
+    }
   }
 
   &__img {
     width: 2.3rem;
     margin-right: 1.3rem;
+    filter: invert(0.5); // css filters to style svgs thru img tags
+    transition: all ease-out 0.2s;
   }
 
   &__link {
@@ -261,10 +278,7 @@ body {
     font-weight: 500;
     font-size: 2.3rem;
     text-transform: uppercase;
-
-    &:hover {
-      cursor: pointer;
-    }
+    transition: all ease-out 0.2s;
   }
 }
 
