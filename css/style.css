@@ -104,6 +104,13 @@ body {
   background-color: #4b6cc1;
 }
 
+@media (max-width: 650px) {
+  .site-header {
+    position: fixed;
+    width: 100%;
+  }
+}
+
 .site-menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -164,7 +171,6 @@ body {
             justify-content: center;
     -ms-flex-line-pack: center;
         align-content: center;
-    height: 75vh;
   }
 }
 
@@ -175,6 +181,18 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+}
+
+@media (max-width: 650px) {
+  .site-banner {
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 

@@ -124,6 +124,11 @@ body {
       background-color: $primary-accent;
     }
   }
+
+  @include media-sm {
+    position: fixed;
+    width: 100%;
+  }
 }
 
 .site-menu {
@@ -169,12 +174,18 @@ body {
       flex-wrap: wrap;
       justify-content: center;
       align-content: center;
-      height: 75vh;
     }
+
     @include media-md {
       flex-wrap: wrap;
       justify-content: center;
     }
+  }
+
+  @include media-sm {
+    height: 100vh;
+    display: flex;
+    align-items: center;
   }
 }
 
