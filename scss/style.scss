@@ -37,16 +37,6 @@ html {
   text-rendering: optimizeLegibility;
   font-size: 62.5%; //10/16
   box-sizing: border-box;
-
-  @include mobile {
-    color: green;
-  }
-  @include tablet {
-    color: blue;
-  }
-  @include desktop {
-    color: red;
-  }
 }
 
 html,
@@ -102,6 +92,7 @@ body {
 
 .site-header {
   background-color: $primary-dark;
+  user-select: none;
 
   &__inner {
     display: flex;
@@ -161,7 +152,6 @@ body {
       font-size: 3rem;
       padding: 1.5rem 0;
       border-bottom: 3px solid #eee;
-      user-select: none;
 
       &:hover {
         cursor: pointer;
@@ -243,7 +233,7 @@ body {
 
 .site-banner {
   background-color: $primary-dark;
-  padding: $section-padding-lg 1rem;
+  padding: $section-padding-lg 1.2rem;
 
   &__inner {
     display: flex;

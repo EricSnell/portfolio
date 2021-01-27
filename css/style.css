@@ -7,24 +7,6 @@ html {
           box-sizing: border-box;
 }
 
-@media (max-width: 650px) {
-  html {
-    color: green;
-  }
-}
-
-@media (min-width: 650px) and (max-width: 965px) {
-  html {
-    color: blue;
-  }
-}
-
-@media (min-width: 965px) {
-  html {
-    color: red;
-  }
-}
-
 html,
 body {
   height: 100%;
@@ -78,6 +60,10 @@ body {
 
 .site-header {
   background-color: #191a1d;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .site-header__inner {
@@ -156,10 +142,6 @@ body {
     font-size: 3rem;
     padding: 1.5rem 0;
     border-bottom: 3px solid #eee;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
   }
   .site-menu__item:hover {
     cursor: pointer;
@@ -252,7 +234,7 @@ body {
 
 .site-banner {
   background-color: #191a1d;
-  padding: calc(calc(8rem) + 4rem) 1rem;
+  padding: calc(calc(8rem) + 4rem) 1.2rem;
 }
 
 .site-banner__inner {
