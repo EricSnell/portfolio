@@ -137,12 +137,9 @@ body {
 }
 
 .site-menu {
-  display: flex;
-  align-items: center;
   width: 55%;
   color: $primary-light-header;
   font-size: 2.3rem;
-  border: 1px dashed white;
 
   &__inner {
     display: flex;
@@ -167,6 +164,8 @@ body {
 
 .burger-menu {
   display: none;
+  position: relative;
+  z-index: 100;
 
   &__line {
     width: 4rem;
@@ -193,18 +192,53 @@ body {
   position: fixed;
   left: -100%;
 
-  &:checked + .site-menu {
-    display: block;
+  &:checked {
+    & ~ label .burger-menu * {
+      background-color: #ffffff85;
+    }
+
+    & ~ .site-menu {
+      display: block;
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: $primary-dark-header;
+      color: $primary-dark-text;
+      top: 100%;
+      box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.6);
+    }
+
+    & ~ .site-menu .site-menu__inner {
+      flex-direction: column;
+      padding: 0;
+    }
+
+    & ~ .site-menu .site-menu__item {
+      text-align: center;
+      font-size: 3rem;
+      padding: 1.5rem 0;
+      border-bottom: 3px solid #eee;
+      user-select: none;
+
+      &:hover {
+        cursor: pointer;
+        color: $primary-dark;
+      }
+    }
+
+    & ~ .site-menu .site-menu__link {
+      &:hover {
+        color: inherit;
+      }
+    }
   }
 }
 
 .site-banner {
   background-color: $primary-dark;
   padding: $section-padding-lg 1rem;
-
-  & * {
-    //border: 1px solid white;
-  }
 
   &__inner {
     display: flex;
