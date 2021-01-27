@@ -119,16 +119,9 @@ body {
 }
 
 .site-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   width: 55%;
   color: #919191;
   font-size: 2.3rem;
-  border: 1px dashed white;
 }
 
 .site-menu__inner {
@@ -159,6 +152,8 @@ body {
 
 .burger-menu {
   display: none;
+  position: relative;
+  z-index: 100;
 }
 
 .burger-menu__line {
@@ -197,8 +192,50 @@ body {
   left: -100%;
 }
 
-#toggle-menu-hack:checked + .site-menu {
+#toggle-menu-hack:checked ~ label .burger-menu * {
+  background-color: #ffffff85;
+}
+
+#toggle-menu-hack:checked ~ .site-menu {
   display: block;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  color: #5e5e5e;
+  top: 100%;
+  -webkit-box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.6);
+          box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.6);
+}
+
+#toggle-menu-hack:checked ~ .site-menu .site-menu__inner {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0;
+}
+
+#toggle-menu-hack:checked ~ .site-menu .site-menu__item {
+  text-align: center;
+  font-size: 3rem;
+  padding: 1.5rem 0;
+  border-bottom: 3px solid #eee;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#toggle-menu-hack:checked ~ .site-menu .site-menu__item:hover {
+  cursor: pointer;
+  color: #191a1d;
+}
+
+#toggle-menu-hack:checked ~ .site-menu .site-menu__link:hover {
+  color: inherit;
 }
 
 .site-banner {
