@@ -78,7 +78,6 @@ body {
 
 .site-header {
   background-color: #191a1d;
-  border: 1px dashed white;
 }
 
 .site-header__inner {
@@ -115,6 +114,8 @@ body {
   .site-header {
     position: fixed;
     width: 100%;
+    -webkit-box-shadow: 0 10px 35px 0 rgba(0, 0, 0, 0.4);
+            box-shadow: 0 10px 35px 0 rgba(0, 0, 0, 0.4);
   }
 }
 
@@ -132,11 +133,38 @@ body {
   padding: 0.8rem 0;
 }
 
+@media (max-width: 650px) {
+  .site-menu__inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0;
+  }
+}
+
 .site-menu__item {
   text-align: right;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+}
+
+@media (max-width: 650px) {
+  .site-menu__item {
+    text-align: center;
+    font-size: 3rem;
+    padding: 1.5rem 0;
+    border-bottom: 3px solid #eee;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  .site-menu__item:hover {
+    cursor: pointer;
+    color: #191a1d;
+  }
 }
 
 .site-menu a:hover {
@@ -146,7 +174,21 @@ body {
 
 @media (max-width: 650px) {
   .site-menu {
-    display: none;
+    -webkit-transition: max-height 0.1s ease-out;
+    transition: max-height 0.1s ease-out;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    color: #5e5e5e;
+    top: 100%;
+    -webkit-box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.6);
+            box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.6);
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
   }
 }
 
@@ -197,45 +239,9 @@ body {
 }
 
 #toggle-menu-hack:checked ~ .site-menu {
-  display: block;
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-color: #ffffff;
-  color: #5e5e5e;
-  top: 100%;
-  -webkit-box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.6);
-          box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.6);
-}
-
-#toggle-menu-hack:checked ~ .site-menu .site-menu__inner {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 0;
-}
-
-#toggle-menu-hack:checked ~ .site-menu .site-menu__item {
-  text-align: center;
-  font-size: 3rem;
-  padding: 1.5rem 0;
-  border-bottom: 3px solid #eee;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-#toggle-menu-hack:checked ~ .site-menu .site-menu__item:hover {
-  cursor: pointer;
-  color: #191a1d;
-}
-
-#toggle-menu-hack:checked ~ .site-menu .site-menu__link:hover {
-  color: inherit;
+  max-height: 100rem;
+  -webkit-transition: max-height 0.1s ease-in;
+  transition: max-height 0.1s ease-in;
 }
 
 .site-banner {
