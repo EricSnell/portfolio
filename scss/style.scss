@@ -170,9 +170,17 @@ body {
     }
   }
 
-  a:hover {
-    color: $primary-dark-header;
-    cursor: pointer;
+  &__link {
+    &:hover {
+      color: $primary-dark-header;
+      cursor: pointer;
+    }
+
+    @include mobile {
+      &:hover {
+        color: inherit;
+      }
+    }
   }
 
   @include mobile {

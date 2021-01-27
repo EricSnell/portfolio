@@ -167,9 +167,15 @@ body {
   }
 }
 
-.site-menu a:hover {
+.site-menu__link:hover {
   color: #ffffff;
   cursor: pointer;
+}
+
+@media (max-width: 650px) {
+  .site-menu__link:hover {
+    color: inherit;
+  }
 }
 
 @media (max-width: 650px) {
