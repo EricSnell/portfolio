@@ -149,6 +149,40 @@ body {
   cursor: pointer;
 }
 
+.burger-menu {
+  display: none;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+}
+
+.burger-menu__line {
+  width: 4rem;
+  padding: 0.25rem 0;
+  margin-bottom: 0.5rem;
+  display: block;
+  background-color: #ffffff;
+  border-radius: 3px;
+}
+
+@media (max-width: 650px) {
+  .burger-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .site-banner {
   background-color: #191a1d;
   padding: calc(calc(8rem) + 4rem) 1rem;

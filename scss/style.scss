@@ -159,6 +159,29 @@ body {
   }
 }
 
+.burger-menu {
+  display: none;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+
+  &__line {
+    width: 4rem;
+    padding: 0.25rem 0;
+    margin-bottom: 0.5rem;
+    display: block;
+    background-color: $primary-dark-header;
+    border-radius: 3px;
+  }
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
 .site-banner {
   background-color: $primary-dark;
   padding: $section-padding-lg 1rem;
