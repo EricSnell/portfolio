@@ -12,21 +12,21 @@ $margin-btm-small: 1.5rem;
 $section-padding: calc(#{$margin-btm * 2});
 $section-padding-lg: calc(#{$section-padding} + #{$margin-btm});
 
-$media-sm-width: 650px;
-$media-lg-width: 965px;
+$max-mobile-width: 650px;
+$max-tablet-width: 965px;
 
-@mixin media-sm {
-  @media (max-width: #{$media-sm-width}) {
+@mixin mobile {
+  @media (max-width: #{$max-mobile-width}) {
     @content;
   }
 }
-@mixin media-md {
-  @media (min-width: #{$media-sm-width}) and (max-width: #{$media-lg-width}) {
+@mixin tablet {
+  @media (min-width: #{$max-mobile-width}) and (max-width: #{$max-tablet-width}) {
     @content;
   }
 }
-@mixin media-lg {
-  @media (min-width: #{$media-lg-width}) {
+@mixin desktop {
+  @media (min-width: #{$max-tablet-width}) {
     @content;
   }
 }
@@ -38,13 +38,13 @@ html {
   font-size: 62.5%; //10/16
   box-sizing: border-box;
 
-  @include media-sm {
+  @include mobile {
     color: green;
   }
-  @include media-md {
+  @include tablet {
     color: blue;
   }
-  @include media-lg {
+  @include desktop {
     color: red;
   }
 }
@@ -89,6 +89,10 @@ body {
     font-size: 5rem;
     font-weight: 500;
     color: $primary-dark-text;
+
+    @include mobile {
+      font-size: 4rem;
+    }
   }
 
   &:last-of-type {
@@ -125,7 +129,7 @@ body {
     }
   }
 
-  @include media-sm {
+  @include mobile {
     position: fixed;
     width: 100%;
   }
@@ -170,19 +174,19 @@ body {
     max-width: 105rem;
     margin: 0 auto;
 
-    @include media-sm {
+    @include mobile {
       flex-wrap: wrap;
       justify-content: center;
       align-content: center;
     }
 
-    @include media-md {
+    @include tablet {
       flex-wrap: wrap;
       justify-content: center;
     }
   }
 
-  @include media-sm {
+  @include mobile {
     height: 100vh;
     display: flex;
     align-items: center;
@@ -203,7 +207,7 @@ body {
       font-size: inherit;
     }
 
-    @include media-sm {
+    @include mobile {
       font-size: 4rem;
       margin-bottom: $margin-btm-small;
     }
@@ -215,7 +219,7 @@ body {
     font-size: 3.5rem;
     margin-bottom: $margin-btm;
 
-    @include media-sm {
+    @include mobile {
       font-size: 2.5rem;
       padding: 0 4rem;
       margin-bottom: $margin-btm;
@@ -225,12 +229,12 @@ body {
   &__img--wrapper {
     text-align: center;
 
-    @include media-sm {
+    @include mobile {
       order: 1;
       margin-bottom: $margin-btm;
       flex-shrink: 1;
     }
-    @include media-md {
+    @include tablet {
       order: 1;
       margin-bottom: $margin-btm;
     }
@@ -239,16 +243,16 @@ body {
   &__img {
     width: 35rem;
 
-    @include media-sm {
+    @include mobile {
       width: 28rem;
     }
   }
 
-  @include media-sm {
+  @include mobile {
     text-align: center;
     order: 2;
   }
-  @include media-md {
+  @include tablet {
     text-align: center;
     order: 2;
   }
@@ -269,10 +273,17 @@ body {
   &__img {
     max-width: 13rem;
     margin-bottom: $margin-btm-small;
+    @include mobile {
+      width: 10rem;
+    }
   }
 
   &__name {
     font-size: 2.8rem;
+
+    @include mobile {
+      font-size: 2rem;
+    }
   }
 }
 
