@@ -174,7 +174,6 @@ body {
   }
 
   @include mobile {
-    transition: max-height 0.1s ease-out;
     position: absolute;
     z-index: 1;
     width: 100%;
@@ -184,9 +183,11 @@ body {
     color: $primary-dark-text;
     top: 100%;
     box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.6);
-    max-height: 0;
     overflow: hidden;
     padding: 0;
+    transition: transform 0.1s ease-out;
+    transform-origin: top;
+    transform: scaleY(0);
   }
 }
 
@@ -225,8 +226,7 @@ body {
       background-color: #ffffff85;
     }
     & ~ .site-menu {
-      max-height: 100rem; // a height the menu will never reach
-      transition: max-height 0.1s ease-in; // height only animatable when using max-height
+      transform: scaleY(1);
     }
   }
 }
