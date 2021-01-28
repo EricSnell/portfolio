@@ -490,6 +490,7 @@ body {
 
   &:hover {
     background-color: transparent;
+    cursor: pointer;
   }
 
   &--large {
@@ -547,4 +548,45 @@ body {
   flex-wrap: wrap;
   align-content: stretch;
   align-items: center;
+}
+
+.form {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 40%;
+  transform: translate(-50%, -50%);
+  height: 60rem;
+  background: $primary-dark-header;
+  border-radius: 0.6rem;
+  background-color: $primary-dark;
+  color: $primary-dark-header;
+  padding: 5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+
+  &__label {
+    color: $primary-light-header;
+    font-size: 2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: $margin-btm-med;
+  }
+
+  &__input {
+    width: 100%;
+    height: 5rem;
+    margin-top: 0.5rem;
+    border-radius: 0.6rem;
+    border: 2px solid $primary-light-header;
+    padding: 1rem;
+    font-size: 2rem;
+
+    &--text {
+      height: 13rem;
+      resize: none;
+    }
+  }
 }
