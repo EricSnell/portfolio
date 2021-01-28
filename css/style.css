@@ -149,6 +149,11 @@ body {
   }
 }
 
+.site-menu__link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .site-menu__link:hover {
   color: #ffffff;
   cursor: pointer;
