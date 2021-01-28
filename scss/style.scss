@@ -394,7 +394,7 @@ body {
 }
 
 .contact {
-  width: 70%;
+  width: 65%;
 
   &__header {
     color: $primary-dark-header;
@@ -409,14 +409,15 @@ body {
     margin-bottom: $margin-btm;
     font-weight: 300;
   }
+
+  @include mobile {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .social-links {
   flex: 1;
-
-  &__inner {
-    align-content: stretch;
-  }
 
   &__item {
     display: flex;
@@ -517,5 +518,7 @@ body {
 
 .flex {
   display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
   align-items: center;
 }
