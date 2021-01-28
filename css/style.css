@@ -317,6 +317,7 @@ body {
   line-height: 1.4;
   font-size: 3.5rem;
   margin-bottom: 4rem;
+  font-weight: 300;
 }
 
 @media (max-width: 650px) {
@@ -471,6 +472,12 @@ body {
   margin-bottom: 4rem;
 }
 
+@media (max-width: 650px) {
+  .contact__header {
+    font-size: 4rem;
+  }
+}
+
 .contact__txt {
   font-size: 2.5rem;
   color: #919191;
@@ -482,6 +489,7 @@ body {
   .contact {
     width: 100%;
     text-align: center;
+    padding-bottom: 4rem;
   }
 }
 
