@@ -537,7 +537,8 @@ body {
 
 .site-footer {
   background-color: #101114;
-  padding: 5rem 0;
+  padding: 4rem 0;
+  border-top: 1px solid #5e5e5e;
 }
 
 .site-footer__inner {
@@ -555,12 +556,24 @@ body {
   text-decoration: none;
   background-color: #4b6cc1;
   color: #ffffff;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  border: 2px solid #4b6cc1;
+}
+
+.btn:hover {
+  background-color: transparent;
 }
 
 .btn--large {
   font-size: 3rem;
   padding: 2.3rem 4rem;
   border-radius: 5rem;
+}
+
+.btn--large:hover {
+  -webkit-box-shadow: 0 0 15px 3px rgba(75, 108, 193, 0.3);
+          box-shadow: 0 0 15px 3px rgba(75, 108, 193, 0.3);
 }
 
 .btn--small {
@@ -570,10 +583,9 @@ body {
   border-radius: 3rem;
   background-color: transparent;
   color: #191a1d;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
   -webkit-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+  border: none;
 }
 
 .btn--small:hover {
@@ -588,14 +600,14 @@ body {
 
 .slanted-bottom {
   padding-bottom: 15rem;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 100px));
-          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 100px));
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - calc(8rem)));
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - calc(8rem)));
 }
 
 .slanted-top {
   padding-top: 11rem;
-  -webkit-clip-path: polygon(0 0, 100% 100px, 100% 100%, 0 100%);
-          clip-path: polygon(0 0, 100% 100px, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% calc(8rem), 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% calc(8rem), 100% 100%, 0 100%);
 }
 
 .flex {
