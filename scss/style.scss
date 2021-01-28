@@ -287,6 +287,7 @@ body {
     line-height: 1.4;
     font-size: 3.5rem;
     margin-bottom: $margin-btm;
+    font-weight: 300;
 
     @include mobile {
       font-size: 2.5rem;
@@ -402,6 +403,10 @@ body {
     font-size: 5rem;
     font-weight: 400;
     margin-bottom: $margin-btm;
+
+    @include mobile {
+      font-size: 4rem;
+    }
   }
 
   &__txt {
@@ -414,6 +419,7 @@ body {
   @include mobile {
     width: 100%;
     text-align: center;
+    padding-bottom: $margin-btm;
   }
 }
 
