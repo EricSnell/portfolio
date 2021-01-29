@@ -14,7 +14,7 @@ $section-padding-lg: calc(#{$section-padding} + #{$margin-btm});
 $section-width: 100rem;
 
 $max-mobile-width: 650px;
-$max-tablet-width: 965px;
+$max-tablet-width: 995px;
 
 @mixin mobile {
   @media (max-width: #{$max-mobile-width}) {
@@ -249,14 +249,11 @@ body {
     margin: 0 auto;
 
     @include mobile {
-      flex-wrap: wrap;
-      justify-content: center;
-      align-content: center;
+      flex-direction: column;
     }
 
     @include tablet {
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
     }
   }
 
@@ -555,9 +552,9 @@ body {
 .form {
   position: absolute;
   top: 0;
-  transform: translateX(120%);
   height: 100%;
   width: calc(#{$section-width} / 2);
+  transform: translateX(150%);
   opacity: 0;
   visibility: hidden;
   z-index: 100;
@@ -571,9 +568,17 @@ body {
   transition: all 0.2s ease-out;
 
   @include mobile {
-    bottom: 0;
+    left: 0;
     width: 100%;
-    transform: translate(-50%, 0);
+    justify-content: center;
+    transform: translateX(0);
+  }
+
+  @include tablet {
+    left: 0;
+    width: 100%;
+    transform: translateX(0);
+    padding: 5rem;
   }
 
   &__close {
@@ -591,6 +596,10 @@ body {
       user-select: none;
       color: $primary-dark-header;
     }
+
+    @include mobile {
+      font-size: 4rem;
+    }
   }
 
   &__label {
@@ -599,16 +608,24 @@ body {
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 2px;
+    margin-bottom: 0.5rem;
   }
 
   &__input {
     height: 3.5rem;
-    margin-top: 0.5rem;
     border-radius: 0.6rem;
     border: 2px solid $primary-light-header;
     padding: 1rem;
     font-size: 2rem;
     margin-bottom: $margin-btm-med;
+
+    @include mobile {
+      height: 6rem;
+    }
+
+    @include tablet {
+      height: 5rem;
+    }
 
     &--text {
       height: 10rem;
@@ -632,6 +649,14 @@ label[for="toggle-contactform-hack"] {
       transform: translateX(100%);
       opacity: 1;
       visibility: visible;
+
+      @include mobile {
+        transform: translateX(0);
+      }
+
+      @include tablet {
+        transform: translateX(0);
+      }
     }
 
     & ~ label[for="toggle-contactform-hack"] {
