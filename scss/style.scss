@@ -11,6 +11,7 @@ $margin-btm-med: 2.5rem;
 $margin-btm-small: 1.5rem;
 $section-padding: calc(#{$margin-btm * 2});
 $section-padding-lg: calc(#{$section-padding} + #{$margin-btm});
+$section-width: 100rem;
 
 $max-mobile-width: 650px;
 $max-tablet-width: 965px;
@@ -42,6 +43,7 @@ html {
 html,
 body {
   height: 100%;
+  overflow-x: hidden;
 }
 
 *,
@@ -68,7 +70,7 @@ body {
 
   &__inner {
     border: 1px dashed;
-    max-width: 100rem;
+    max-width: $section-width;
     margin: 0 auto;
   }
 
@@ -87,7 +89,7 @@ body {
   }
 
   &:last-of-type {
-    //padding-bottom: $margin-btm-large * 1.8;
+    padding: $margin-btm-large * 1.8 1rem;
   }
 }
 
@@ -551,20 +553,45 @@ body {
 }
 
 .form {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  width: 40%;
-  transform: translate(-50%, -50%);
-  height: 60rem;
+  position: absolute;
+  top: 0;
+  transform: translateX(120%);
+  height: 100%;
+  width: calc(#{$section-width} / 2);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100;
   background: $primary-dark-header;
-  border-radius: 0.6rem;
   background-color: $primary-dark;
   color: $primary-dark-header;
   padding: 5rem 3rem;
   display: flex;
   flex-direction: column;
   align-content: stretch;
+  transition: all 0.2s ease-out;
+
+  @include mobile {
+    bottom: 0;
+    width: 100%;
+    transform: translate(-50%, 0);
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2rem;
+    color: $primary-light-header;
+    font-size: 2.4rem;
+    font-weight: 900;
+    align-self: flex-end;
+
+    &:hover {
+      cursor: pointer;
+      user-select: none;
+      color: $primary-dark-header;
+    }
+  }
 
   &__label {
     color: $primary-light-header;
@@ -572,21 +599,47 @@ body {
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: $margin-btm-med;
   }
 
   &__input {
-    width: 100%;
-    height: 5rem;
+    height: 3.5rem;
     margin-top: 0.5rem;
     border-radius: 0.6rem;
     border: 2px solid $primary-light-header;
     padding: 1rem;
     font-size: 2rem;
+    margin-bottom: $margin-btm-med;
 
     &--text {
-      height: 13rem;
+      height: 10rem;
       resize: none;
+      margin-bottom: $margin-btm;
     }
   }
+}
+
+label[for="toggle-contactform-hack"] {
+  opacity: 1;
+  transition: all 0.1s ease-out;
+}
+
+#toggle-contactform-hack {
+  position: fixed;
+  left: -100%;
+
+  &:checked {
+    & ~ form {
+      transform: translateX(100%);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    & ~ label[for="toggle-contactform-hack"] {
+      opacity: 0;
+    }
+  }
+}
+
+.pos-rel {
+  position: relative;
 }

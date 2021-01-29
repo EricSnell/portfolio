@@ -10,6 +10,7 @@ html {
 html,
 body {
   height: 100%;
+  overflow-x: hidden;
 }
 
 *,
@@ -56,6 +57,10 @@ body {
   .site-section__header {
     font-size: 4rem;
   }
+}
+
+.site-section:last-of-type {
+  padding: 14.4rem 1rem;
 }
 
 .site-header {
@@ -638,15 +643,16 @@ body {
 }
 
 .form {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  width: 40%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  height: 60rem;
+  position: absolute;
+  top: 0;
+  -webkit-transform: translateX(120%);
+          transform: translateX(120%);
+  height: 100%;
+  width: calc(100rem / 2);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100;
   background: #ffffff;
-  border-radius: 0.6rem;
   background-color: #191a1d;
   color: #ffffff;
   padding: 5rem 3rem;
@@ -659,6 +665,38 @@ body {
           flex-direction: column;
   -ms-flex-line-pack: stretch;
       align-content: stretch;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+@media (max-width: 650px) {
+  .form {
+    bottom: 0;
+    width: 100%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+}
+
+.form__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2rem;
+  color: #919191;
+  font-size: 2.4rem;
+  font-weight: 900;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.form__close:hover {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #ffffff;
 }
 
 .form__label {
@@ -667,20 +705,46 @@ body {
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-bottom: 2.5rem;
 }
 
 .form__input {
-  width: 100%;
-  height: 5rem;
+  height: 3.5rem;
   margin-top: 0.5rem;
   border-radius: 0.6rem;
   border: 2px solid #919191;
   padding: 1rem;
   font-size: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .form__input--text {
-  height: 13rem;
+  height: 10rem;
   resize: none;
+  margin-bottom: 4rem;
+}
+
+label[for="toggle-contactform-hack"] {
+  opacity: 1;
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+#toggle-contactform-hack {
+  position: fixed;
+  left: -100%;
+}
+
+#toggle-contactform-hack:checked ~ form {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  opacity: 1;
+  visibility: visible;
+}
+
+#toggle-contactform-hack:checked ~ label[for="toggle-contactform-hack"] {
+  opacity: 0;
+}
+
+.pos-rel {
+  position: relative;
 }

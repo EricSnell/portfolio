@@ -147,12 +147,33 @@
 			</div>
 		</div>
 	</section>
-	<section class="site-section site-section--dark">
+	<section class="site-section site-section--dark pos-rel">
 		<div class="site-section__inner flex" id="contact-section">
 				<div class="contact">
 					<h1 class="contact__header">Let's Work Together</h1>
 					<p class="contact__txt">Have a project you'd like to discuss?</p>
-					<a href="" class="btn btn--large">Get In Touch</a>
+					<input type="checkbox" id="toggle-contactform-hack">
+					<label for="toggle-contactform-hack">
+						<a class="btn btn--large">Get In Touch</a>
+					</label>
+					<form action="https://formspree.io/f/mvovljpv" method="POST" class="form">
+						<label for="toggle-contactform-hack" class="form__close">
+							X
+						</label>
+						<label class="form__label">
+							Name
+						</label>
+						<input class="form__input" type="text" name="name">
+						<label class="form__label">
+							Email
+						</label>
+						<input class="form__input" type="text" name="_replyto">
+						<label class="form__label">
+							How can I help?
+						</label>
+						<textarea class="form__input form__input--text" name="message" width="100"></textarea>
+						<button class="btn btn--large" type="submit">Send Message</button>
+					</form>
 				</div>
 				<div class="social-links">
 					<ul class="social-links__inner">
@@ -177,20 +198,5 @@
 			<p class="site-footer__copyright">Made possible by &#129380; </p>
 		</div>
 	</footer>
-	<form action="https://formspree.io/f/mvovljpv" method="POST" class="form">
-		<label class="form__label">
-			Name
-			<input class="form__input" type="text" name="name">
-		</label>
-		<label class="form__label">
-			Email
-			<input class="form__input" type="text" name="_replyto">
-		</label>
-		<label class="form__label">
-			How can I help?
-			<textarea class="form__input form__input--text" name="message" width="100"></textarea>
-		</label>
-  	<button class="btn btn--large" type="submit">Send Message</button>
-	</form>
 </body>
 </html>
