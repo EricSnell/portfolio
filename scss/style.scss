@@ -20,7 +20,8 @@ $spacing-lrg: calc(#{$spacing-med * 2});
 $spacing-xlrg: calc(#{$spacing-lrg} + #{$spacing-med});
 $content-width: 100rem;
 
-// Fonts
+// Animations
+$transition-default: all ease-out 0.2s;
 
 // Breakpoints
 $max-mobile-width: 650px;
@@ -102,13 +103,11 @@ Components
   }
 
   &__inner {
-    border: 3px dashed red;
     max-width: $content-width;
     margin: 0 auto;
   }
 
   &__header {
-    border: 1px solid green;
     padding-bottom: $spacing-med;
     text-align: center;
     font-size: 5rem;
@@ -178,7 +177,7 @@ Components
     box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.6);
     transform: scaleY(0);
     transform-origin: top;
-    transition: transform 0.1s ease-out;
+    transition: $transition-default;
   }
 
   &__inner {
@@ -465,21 +464,20 @@ Components
     width: 2.3rem;
     margin-right: $spacing-xsml;
     filter: invert(0.5); // css filters to style svgs thru img tags
-    transition: all ease-out 0.2s;
+    transition: $transition-default;
   }
 
   &__link {
     font-size: 2.3rem;
     font-weight: 500;
     color: $primary-dark;
-    transition: all ease-out 0.2s;
+    transition: $transition-default;
   }
 }
 
 .site-footer {
+  padding: $spacing-med 0;
   background-color: #101114;
-  padding: 4rem 0;
-  border-top: 1px solid $primary-darker;
 
   &__inner {
     text-align: center;
@@ -494,14 +492,13 @@ Components
 
 .btn {
   display: inline-block;
-  background-color: $primary-accent;
-  color: $primary-lightest;
-  transition: all 0.2s;
   border: 2px solid $primary-accent;
+  color: $primary-lightest;
+  background-color: $primary-accent;
+  transition: all 0.2s;
 
   &:hover {
     background-color: transparent;
-    cursor: pointer;
   }
 
   &--large {
@@ -518,22 +515,141 @@ Components
     font-size: 2rem;
     padding: 1.5rem 5rem;
     margin: 0 1rem;
-    border-radius: 3rem;
-    background-color: transparent;
-    color: $primary-darkest;
-    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
     border: none;
+    border-radius: 3rem;
+    color: $primary-darkest;
+    background-color: transparent;
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
 
     &:hover {
-      background-color: $primary-accent;
       color: $primary-lightest;
     }
   }
 
-  &--dark {
+  &--hov-accent {
     &:hover {
-      color: $primary-lightest;
+      background-color: $primary-accent;
+    }
+  }
+
+  &--hov-dark {
+    &:hover {
       background-color: $primary-darkest;
+    }
+  }
+}
+
+.form {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  width: calc(#{$content-width} / 2);
+  height: 100%;
+  padding: 5rem 3rem;
+  background-color: $primary-darkest;
+  color: $primary-lightest;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100;
+  transform: translateX(150%);
+  transition: all 0.2s ease-out;
+
+  @include mobile {
+    left: 0;
+    width: 100%;
+    justify-content: center;
+    transform: translateX(0);
+  }
+
+  @include tablet {
+    left: 0;
+    width: 100%;
+    padding: 5rem 10rem;
+    transform: translateX(0);
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    align-self: flex-end;
+    padding: 2rem;
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: $primary-dark;
+
+    &:hover {
+      cursor: pointer;
+      color: $primary-lightest;
+    }
+
+    @include mobile {
+      font-size: 4rem;
+    }
+  }
+
+  &__label {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $primary-dark;
+  }
+
+  &__input {
+    height: 3.5rem;
+    padding: 1rem;
+    margin-bottom: $spacing-sml;
+    font-size: 2rem;
+    border-radius: 0.6rem;
+    border: 2px solid $primary-dark;
+
+    @include mobile {
+      height: 6rem;
+    }
+
+    @include tablet {
+      height: 5rem;
+    }
+
+    &--text {
+      height: 10rem;
+      margin-bottom: $spacing-med;
+      resize: none;
+    }
+  }
+}
+
+label[for="toggle-contactform"] {
+  opacity: 1;
+  transition: $transition-default;
+}
+
+// checkbox hack to toggle form
+#toggle-contactform {
+  position: fixed;
+  left: -100%; // throw off screen
+
+  &:checked {
+    & ~ .form {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(100%);
+
+      @include mobile {
+        transform: translateX(0);
+      }
+
+      @include tablet {
+        transform: translateX(0);
+      }
+    }
+
+    & ~ label[for="toggle-contactform"] {
+      opacity: 0;
     }
   }
 }
@@ -552,124 +668,7 @@ Components
 .flex {
   display: flex;
   flex-wrap: wrap;
-  align-content: stretch;
   align-items: center;
-}
-
-.form {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: calc(#{$content-width} / 2);
-  transform: translateX(150%);
-  opacity: 0;
-  visibility: hidden;
-  z-index: 100;
-  background: $primary-lightest;
-  background-color: $primary-darkest;
-  color: $primary-lightest;
-  padding: 5rem 3rem;
-  display: flex;
-  flex-direction: column;
-  align-content: stretch;
-  transition: all 0.2s ease-out;
-
-  @include mobile {
-    left: 0;
-    width: 100%;
-    justify-content: center;
-    transform: translateX(0);
-  }
-
-  @include tablet {
-    left: 0;
-    width: 100%;
-    transform: translateX(0);
-    padding: 5rem 10rem;
-  }
-
-  &__close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 2rem;
-    color: $primary-dark;
-    font-size: 2.4rem;
-    font-weight: 900;
-    align-self: flex-end;
-
-    &:hover {
-      cursor: pointer;
-      user-select: none;
-      color: $primary-lightest;
-    }
-
-    @include mobile {
-      font-size: 4rem;
-    }
-  }
-
-  &__label {
-    color: $primary-dark;
-    font-size: 2rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 0.5rem;
-  }
-
-  &__input {
-    height: 3.5rem;
-    border-radius: 0.6rem;
-    border: 2px solid $primary-dark;
-    padding: 1rem;
-    font-size: 2rem;
-    margin-bottom: $spacing-sml;
-
-    @include mobile {
-      height: 6rem;
-    }
-
-    @include tablet {
-      height: 5rem;
-    }
-
-    &--text {
-      height: 10rem;
-      resize: none;
-      margin-bottom: $spacing-med;
-    }
-  }
-}
-
-label[for="toggle-contactform"] {
-  opacity: 1;
-  transition: all 0.1s ease-out;
-}
-
-#toggle-contactform {
-  position: fixed;
-  left: -100%;
-
-  &:checked {
-    & ~ form {
-      transform: translateX(100%);
-      opacity: 1;
-      visibility: visible;
-
-      @include mobile {
-        transform: translateX(0);
-      }
-
-      @include tablet {
-        transform: translateX(0);
-      }
-    }
-
-    & ~ label[for="toggle-contactform"] {
-      opacity: 0;
-    }
-  }
 }
 
 .pos-rel {
