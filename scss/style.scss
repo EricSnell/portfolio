@@ -1,20 +1,36 @@
-// Variables
-$primary-dark: #191a1d;
-$primary-dark-text: #5e5e5e;
-$primary-dark-header: #ffffff;
-$primary-light-background: #f6f6f6;
-$primary-accent: #4b6cc1;
-$primary-light-header: #919191;
-$margin-btm: 4rem;
-$margin-btm-large: 8rem;
-$margin-btm-med: 2.5rem;
-$margin-btm-small: 1.5rem;
-$section-padding: calc(#{$margin-btm * 2});
-$section-padding-lg: calc(#{$section-padding} + #{$margin-btm});
-$section-width: 100rem;
+/***************
 
+Variables
+
+****************/
+
+// Colors
+$primary-accent: #4b6cc1;
+$primary-lightest: #ffffff;
+$primary-light: #f6f6f6;
+$primary-dark: #919191;
+$primary-darker: #5e5e5e;
+$primary-darkest: #191a1d;
+
+// Layout
+$spacing-xsml: 1.5rem;
+$spacing-sml: 2.5rem;
+$spacing-med: 4rem;
+$spacing-lrg: calc(#{$spacing-med * 2});
+$spacing-xlrg: calc(#{$spacing-lrg} + #{$spacing-med});
+$content-width: 100rem;
+
+// Fonts
+
+// Breakpoints
 $max-mobile-width: 650px;
 $max-tablet-width: 995px;
+
+/***************
+
+Mixins
+
+****************/
 
 @mixin mobile {
   @media (max-width: #{$max-mobile-width}) {
@@ -32,18 +48,18 @@ $max-tablet-width: 995px;
   }
 }
 
+/***************
+
+Globals + Reset
+
+****************/
+
 html {
   font-family: "Rubik", sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-size: 62.5%; //10/16
   box-sizing: border-box;
-}
-
-html,
-body {
-  height: 100%;
-  overflow-x: hidden;
 }
 
 *,
@@ -57,31 +73,47 @@ body {
   list-style: none;
 }
 
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+/***************
+
+Components
+
+****************/
+
 .site-section {
-  padding: $section-padding 1rem;
+  padding: $spacing-lrg 1rem;
 
   &--light {
-    background-color: $primary-light-background;
+    background-color: $primary-light;
   }
 
   &--dark {
-    background-color: $primary-dark;
+    background-color: $primary-darkest;
   }
 
   &__inner {
-    border: 1px dashed;
-    max-width: $section-width;
+    border: 3px dashed red;
+    max-width: $content-width;
     margin: 0 auto;
   }
 
   &__header {
     border: 1px solid green;
-    padding-bottom: $margin-btm;
+    padding-bottom: $spacing-med;
     text-align: center;
-    text-transform: uppercase;
     font-size: 5rem;
     font-weight: 500;
-    color: $primary-dark-text;
+    color: $primary-darker;
+    text-transform: uppercase;
 
     @include mobile {
       font-size: 4rem;
@@ -89,51 +121,65 @@ body {
   }
 
   &:last-of-type {
-    padding: $margin-btm-large * 1.8 1rem;
+    padding: calc(#{$spacing-lrg} * 1.8) 1rem;
   }
 }
 
 .site-header {
-  background-color: $primary-dark;
-  user-select: none;
-
-  &__inner {
-    display: flex;
-    justify-content: space-between;
-    max-width: 120rem;
-    margin: 0 auto;
-    padding: 2rem;
-  }
-
-  .site-header__logo {
-    color: $primary-dark-header;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.25rem;
-    font-weight: 500;
-
-    &::after {
-      content: "";
-      display: block;
-      width: 25%;
-      margin-top: 1.5rem;
-      padding: 0.3rem 0;
-      border-radius: 0.3rem;
-      background-color: $primary-accent;
-    }
-  }
+  background-color: $primary-darkest;
 
   @include mobile {
     position: fixed;
     width: 100%;
     box-shadow: 0 10px 35px 0 rgba(0, 0, 0, 0.4);
   }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: $spacing-sml;
+  }
+
+  .site-header__logo {
+    color: $primary-lightest;
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 0.25rem;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 25%;
+      padding: 0.3rem 0;
+      margin-top: $spacing-xsml;
+      border-radius: 0.3rem;
+      background-color: $primary-accent;
+    }
+  }
 }
 
 .site-menu {
   width: 55%;
-  color: $primary-light-header;
   font-size: 2.3rem;
+  color: $primary-dark;
+
+  @include mobile {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    z-index: 1;
+    overflow: hidden;
+    background-color: $primary-lightest;
+    color: $primary-darker;
+    box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.6);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.1s ease-out;
+  }
 
   &__inner {
     display: flex;
@@ -158,7 +204,7 @@ body {
 
       &:hover {
         cursor: pointer;
-        color: $primary-dark;
+        color: $primary-darkest;
       }
     }
   }
@@ -168,8 +214,7 @@ body {
     color: inherit;
 
     &:hover {
-      color: $primary-dark-header;
-      cursor: pointer;
+      color: $primary-lightest;
     }
 
     @include mobile {
@@ -178,58 +223,41 @@ body {
       }
     }
   }
-
-  @include mobile {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background-color: $primary-dark-header;
-    color: $primary-dark-text;
-    top: 100%;
-    box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.6);
-    overflow: hidden;
-    padding: 0;
-    transition: transform 0.1s ease-out;
-    transform-origin: top;
-    transform: scaleY(0);
-  }
 }
 
 .burger-menu {
   display: none;
-  position: relative;
-  z-index: 100;
-
-  &__line {
-    width: 4rem;
-    padding: 0.25rem 0;
-    display: block;
-    background-color: $primary-dark-header;
-    border-radius: 3px;
-  }
-
-  &:hover {
-    cursor: pointer;
-  }
 
   @include mobile {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     height: 4.5rem;
+    z-index: 100;
+  }
+
+  &__line {
+    width: 4rem;
+    padding: 0.25rem 0;
+    background-color: $primary-lightest;
+    border-radius: 0.3rem;
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 }
 
-#toggle-menu-hack {
+// checkbox hack to toggle nav menu
+#toggle-menu {
   position: fixed;
-  left: -100%;
+  left: -100%; // throw off screen
 
   &:checked {
-    & ~ label .burger-menu * {
-      background-color: #ffffff85;
+    & ~ label[for="toggle-menu"] .burger-menu__line {
+      background-color: $primary-dark;
     }
     & ~ .site-menu {
       transform: scaleY(1);
@@ -237,9 +265,15 @@ body {
   }
 }
 
-.site-banner {
-  background-color: $primary-dark;
-  padding: $section-padding-lg 1.2rem;
+.site-hero {
+  padding: $spacing-xlrg $spacing-sml;
+  background-color: $primary-darkest;
+
+  @include mobile {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
 
   &__inner {
     display: flex;
@@ -256,22 +290,25 @@ body {
       flex-direction: column;
     }
   }
-
-  @include mobile {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-  }
 }
 
 .about {
   max-width: 60rem;
 
+  @include mobile {
+    order: 2;
+    text-align: center;
+  }
+  @include tablet {
+    order: 2;
+    text-align: center;
+  }
+
   &__header {
-    color: $primary-dark-header;
-    margin-bottom: $margin-btm;
     font-size: 7rem;
     font-weight: 400;
+    margin-bottom: $spacing-med;
+    color: $primary-lightest;
 
     &::after {
       content: " \1F44B";
@@ -280,53 +317,38 @@ body {
 
     @include mobile {
       font-size: 4rem;
-      margin-bottom: $margin-btm-small;
+      margin-bottom: $spacing-xsml;
     }
   }
 
   &__txt {
-    color: $primary-light-header;
-    line-height: 1.4;
     font-size: 3.5rem;
-    margin-bottom: $margin-btm;
     font-weight: 300;
+    line-height: 1.4;
+    margin-bottom: $spacing-med;
+    color: $primary-dark;
 
     @include mobile {
       font-size: 2.5rem;
-      padding: 0 4rem;
-      margin-bottom: $margin-btm;
-    }
-  }
-
-  &__img--wrapper {
-    text-align: center;
-
-    @include mobile {
-      order: 1;
-      margin-bottom: $margin-btm;
-      flex-shrink: 1;
-    }
-    @include tablet {
-      order: 1;
-      margin-bottom: $margin-btm;
+      max-width: 45rem;
+      margin-bottom: $spacing-med;
     }
   }
 
   &__img {
-    width: 35rem;
+    width: 37rem;
+    flex-shrink: 0;
 
     @include mobile {
+      order: 1;
       width: 28rem;
+      margin-bottom: $spacing-med;
     }
-  }
 
-  @include mobile {
-    text-align: center;
-    order: 2;
-  }
-  @include tablet {
-    text-align: center;
-    order: 2;
+    @include tablet {
+      order: 1;
+      margin-bottom: $spacing-med;
+    }
   }
 }
 
@@ -339,12 +361,12 @@ body {
     width: 33.33%; // older browsers
     width: calc(100% / 3);
     text-align: center;
-    margin-bottom: $margin-btm;
+    margin-bottom: $spacing-med;
   }
 
   &__img {
     max-width: 13rem;
-    margin-bottom: $margin-btm-small;
+    margin-bottom: $spacing-xsml;
     @include mobile {
       width: 10rem;
     }
@@ -365,31 +387,31 @@ body {
   justify-content: center;
 
   &__item {
-    margin: 0 calc(#{$margin-btm}/ 2) $margin-btm;
-    padding-bottom: $margin-btm;
+    margin: 0 calc(#{$spacing-med}/ 2) $spacing-med;
+    padding-bottom: $spacing-med;
     text-align: center;
     border-radius: 0.6rem;
     overflow: hidden;
-    background-color: $primary-dark-header;
+    background-color: $primary-lightest;
     box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.1);
     border-bottom: 0.6rem solid $primary-accent;
   }
 
   &__img {
-    margin-bottom: $margin-btm;
+    margin-bottom: $spacing-med;
   }
 
   &__name {
     font-size: 2.7rem;
-    margin-bottom: $margin-btm-med;
+    margin-bottom: $spacing-sml;
     font-weight: 400;
   }
 
   &__desc {
     font-size: 2rem;
     font-weight: 300;
-    color: $primary-dark-text;
-    margin-bottom: $margin-btm-med;
+    color: $primary-darker;
+    margin-bottom: $spacing-sml;
   }
 
   &__ctas {
@@ -401,10 +423,10 @@ body {
   width: 65%;
 
   &__header {
-    color: $primary-dark-header;
+    color: $primary-lightest;
     font-size: 5rem;
     font-weight: 400;
-    margin-bottom: $margin-btm;
+    margin-bottom: $spacing-med;
 
     @include mobile {
       font-size: 4rem;
@@ -413,15 +435,15 @@ body {
 
   &__txt {
     font-size: 2.5rem;
-    color: $primary-light-header;
-    margin-bottom: $margin-btm;
+    color: $primary-dark;
+    margin-bottom: $spacing-med;
     font-weight: 300;
   }
 
   @include mobile {
     width: 100%;
     text-align: center;
-    padding-bottom: $margin-btm;
+    padding-bottom: $spacing-med;
   }
 }
 
@@ -436,7 +458,7 @@ body {
     &:hover {
       cursor: pointer;
       & > * {
-        color: $primary-dark-header;
+        color: $primary-lightest;
       }
 
       & > img {
@@ -455,7 +477,7 @@ body {
 
   &__link {
     text-decoration: none;
-    color: $primary-light-header;
+    color: $primary-dark;
     font-weight: 500;
     font-size: 2.3rem;
     text-transform: uppercase;
@@ -466,7 +488,7 @@ body {
 .site-footer {
   background-color: #101114;
   padding: 4rem 0;
-  border-top: 1px solid $primary-dark-text;
+  border-top: 1px solid $primary-darker;
 
   &__inner {
     text-align: center;
@@ -475,7 +497,7 @@ body {
   &__copyright {
     font-size: 1.8rem;
     font-weight: 300;
-    color: $primary-light-header;
+    color: $primary-dark;
   }
 }
 
@@ -483,7 +505,7 @@ body {
   display: inline-block;
   text-decoration: none;
   background-color: $primary-accent;
-  color: $primary-dark-header;
+  color: $primary-lightest;
   transition: all 0.2s;
   border: 2px solid $primary-accent;
 
@@ -508,20 +530,20 @@ body {
     margin: 0 1rem;
     border-radius: 3rem;
     background-color: transparent;
-    color: $primary-dark;
+    color: $primary-darkest;
     box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
     border: none;
 
     &:hover {
       background-color: $primary-accent;
-      color: $primary-dark-header;
+      color: $primary-lightest;
     }
   }
 
   &--dark {
     &:hover {
-      color: $primary-dark-header;
-      background-color: $primary-dark;
+      color: $primary-lightest;
+      background-color: $primary-darkest;
     }
   }
 }
@@ -529,17 +551,12 @@ body {
 // Utility classes
 .slanted-bottom {
   padding-bottom: 15rem;
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% 100%,
-    0 calc(100% - #{$section-padding})
-  );
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - #{$spacing-lrg}));
 }
 
 .slanted-top {
   padding-top: 11rem;
-  clip-path: polygon(0 0, 100% #{$section-padding}, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% #{$spacing-lrg}, 100% 100%, 0 100%);
 }
 
 .flex {
@@ -553,14 +570,14 @@ body {
   position: absolute;
   top: 0;
   height: 100%;
-  width: calc(#{$section-width} / 2);
+  width: calc(#{$content-width} / 2);
   transform: translateX(150%);
   opacity: 0;
   visibility: hidden;
   z-index: 100;
-  background: $primary-dark-header;
-  background-color: $primary-dark;
-  color: $primary-dark-header;
+  background: $primary-lightest;
+  background-color: $primary-darkest;
+  color: $primary-lightest;
   padding: 5rem 3rem;
   display: flex;
   flex-direction: column;
@@ -586,7 +603,7 @@ body {
     top: 0;
     right: 0;
     padding: 2rem;
-    color: $primary-light-header;
+    color: $primary-dark;
     font-size: 2.4rem;
     font-weight: 900;
     align-self: flex-end;
@@ -594,7 +611,7 @@ body {
     &:hover {
       cursor: pointer;
       user-select: none;
-      color: $primary-dark-header;
+      color: $primary-lightest;
     }
 
     @include mobile {
@@ -603,7 +620,7 @@ body {
   }
 
   &__label {
-    color: $primary-light-header;
+    color: $primary-dark;
     font-size: 2rem;
     font-weight: 400;
     text-transform: uppercase;
@@ -614,10 +631,10 @@ body {
   &__input {
     height: 3.5rem;
     border-radius: 0.6rem;
-    border: 2px solid $primary-light-header;
+    border: 2px solid $primary-dark;
     padding: 1rem;
     font-size: 2rem;
-    margin-bottom: $margin-btm-med;
+    margin-bottom: $spacing-sml;
 
     @include mobile {
       height: 6rem;
@@ -630,17 +647,17 @@ body {
     &--text {
       height: 10rem;
       resize: none;
-      margin-bottom: $margin-btm;
+      margin-bottom: $spacing-med;
     }
   }
 }
 
-label[for="toggle-contactform-hack"] {
+label[for="toggle-contactform"] {
   opacity: 1;
   transition: all 0.1s ease-out;
 }
 
-#toggle-contactform-hack {
+#toggle-contactform {
   position: fixed;
   left: -100%;
 
@@ -659,7 +676,7 @@ label[for="toggle-contactform-hack"] {
       }
     }
 
-    & ~ label[for="toggle-contactform-hack"] {
+    & ~ label[for="toggle-contactform"] {
       opacity: 0;
     }
   }
