@@ -63,13 +63,11 @@ Components
 }
 
 .site-section__inner {
-  border: 3px dashed red;
   max-width: 100rem;
   margin: 0 auto;
 }
 
 .site-section__header {
-  border: 1px solid green;
   padding-bottom: 4rem;
   text-align: center;
   font-size: 5rem;
@@ -152,10 +150,8 @@ Components
             transform: scaleY(0);
     -webkit-transform-origin: top;
             transform-origin: top;
-    -webkit-transition: -webkit-transform 0.1s ease-out;
-    transition: -webkit-transform 0.1s ease-out;
-    transition: transform 0.1s ease-out;
-    transition: transform 0.1s ease-out, -webkit-transform 0.1s ease-out;
+    -webkit-transition: all ease-out 0.2s;
+    transition: all ease-out 0.2s;
   }
 }
 
@@ -540,9 +536,8 @@ Components
 }
 
 .site-footer {
-  background-color: #101114;
   padding: 4rem 0;
-  border-top: 1px solid #5e5e5e;
+  background-color: #101114;
 }
 
 .site-footer__inner {
@@ -557,16 +552,15 @@ Components
 
 .btn {
   display: inline-block;
-  background-color: #4b6cc1;
+  border: 2px solid #4b6cc1;
   color: #ffffff;
+  background-color: #4b6cc1;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
-  border: 2px solid #4b6cc1;
 }
 
 .btn:hover {
   background-color: transparent;
-  cursor: pointer;
 }
 
 .btn--large {
@@ -584,63 +578,29 @@ Components
   font-size: 2rem;
   padding: 1.5rem 5rem;
   margin: 0 1rem;
+  border: none;
   border-radius: 3rem;
-  background-color: transparent;
   color: #191a1d;
+  background-color: transparent;
   -webkit-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
-  border: none;
 }
 
 .btn--small:hover {
+  color: #ffffff;
+}
+
+.btn--hov-accent:hover {
   background-color: #4b6cc1;
-  color: #ffffff;
 }
 
-.btn--dark:hover {
-  color: #ffffff;
+.btn--hov-dark:hover {
   background-color: #191a1d;
-}
-
-.slanted-bottom {
-  padding-bottom: 15rem;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - calc(8rem)));
-          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - calc(8rem)));
-}
-
-.slanted-top {
-  padding-top: 11rem;
-  -webkit-clip-path: polygon(0 0, 100% calc(8rem), 100% 100%, 0 100%);
-          clip-path: polygon(0 0, 100% calc(8rem), 100% 100%, 0 100%);
-}
-
-.flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .form {
   position: absolute;
   top: 0;
-  height: 100%;
-  width: calc(100rem / 2);
-  -webkit-transform: translateX(150%);
-          transform: translateX(150%);
-  opacity: 0;
-  visibility: hidden;
-  z-index: 100;
-  background: #ffffff;
-  background-color: #191a1d;
-  color: #ffffff;
-  padding: 5rem 3rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -650,6 +610,16 @@ Components
           flex-direction: column;
   -ms-flex-line-pack: stretch;
       align-content: stretch;
+  width: calc(100rem / 2);
+  height: 100%;
+  padding: 5rem 3rem;
+  background-color: #191a1d;
+  color: #ffffff;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100;
+  -webkit-transform: translateX(150%);
+          transform: translateX(150%);
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
@@ -670,9 +640,9 @@ Components
   .form {
     left: 0;
     width: 100%;
+    padding: 5rem 10rem;
     -webkit-transform: translateX(0);
             transform: translateX(0);
-    padding: 5rem 10rem;
   }
 }
 
@@ -680,20 +650,16 @@ Components
   position: absolute;
   top: 0;
   right: 0;
-  padding: 2rem;
-  color: #919191;
-  font-size: 2.4rem;
-  font-weight: 900;
   -ms-flex-item-align: end;
       align-self: flex-end;
+  padding: 2rem;
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #919191;
 }
 
 .form__close:hover {
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   color: #ffffff;
 }
 
@@ -704,21 +670,21 @@ Components
 }
 
 .form__label {
-  color: #919191;
+  margin-bottom: 0.5rem;
   font-size: 2rem;
   font-weight: 400;
-  text-transform: uppercase;
   letter-spacing: 2px;
-  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  color: #919191;
 }
 
 .form__input {
   height: 3.5rem;
+  padding: 1rem;
+  margin-bottom: 2.5rem;
+  font-size: 2rem;
   border-radius: 0.6rem;
   border: 2px solid #919191;
-  padding: 1rem;
-  font-size: 2rem;
-  margin-bottom: 2.5rem;
 }
 
 @media (max-width: 650px) {
@@ -735,14 +701,14 @@ Components
 
 .form__input--text {
   height: 10rem;
-  resize: none;
   margin-bottom: 4rem;
+  resize: none;
 }
 
 label[for="toggle-contactform"] {
   opacity: 1;
-  -webkit-transition: all 0.1s ease-out;
-  transition: all 0.1s ease-out;
+  -webkit-transition: all ease-out 0.2s;
+  transition: all ease-out 0.2s;
 }
 
 #toggle-contactform {
@@ -750,22 +716,22 @@ label[for="toggle-contactform"] {
   left: -100%;
 }
 
-#toggle-contactform:checked ~ form {
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
+#toggle-contactform:checked ~ .form {
   opacity: 1;
   visibility: visible;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
 }
 
 @media (max-width: 650px) {
-  #toggle-contactform:checked ~ form {
+  #toggle-contactform:checked ~ .form {
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
 }
 
 @media (min-width: 650px) and (max-width: 995px) {
-  #toggle-contactform:checked ~ form {
+  #toggle-contactform:checked ~ .form {
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
@@ -773,6 +739,29 @@ label[for="toggle-contactform"] {
 
 #toggle-contactform:checked ~ label[for="toggle-contactform"] {
   opacity: 0;
+}
+
+.slanted-bottom {
+  padding-bottom: 15rem;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - calc(8rem)));
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - calc(8rem)));
+}
+
+.slanted-top {
+  padding-top: 11rem;
+  -webkit-clip-path: polygon(0 0, 100% calc(8rem), 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% calc(8rem), 100% 100%, 0 100%);
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .pos-rel {
