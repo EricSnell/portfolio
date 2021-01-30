@@ -71,6 +71,7 @@ html {
   border: 0;
   box-sizing: inherit;
   list-style: none;
+  text-decoration: none;
 }
 
 html,
@@ -113,7 +114,6 @@ Components
     font-size: 5rem;
     font-weight: 500;
     color: $primary-darker;
-    text-transform: uppercase;
 
     @include mobile {
       font-size: 4rem;
@@ -121,7 +121,7 @@ Components
   }
 
   &:last-of-type {
-    padding: calc(#{$spacing-lrg} * 1.8) 1rem;
+    padding: calc(#{$spacing-lrg} * 1.8) $spacing-sml;
   }
 }
 
@@ -210,7 +210,6 @@ Components
   }
 
   &__link {
-    text-decoration: none;
     color: inherit;
 
     &:hover {
@@ -357,16 +356,16 @@ Components
   flex-wrap: wrap;
 
   &__item {
-    border: 1px dashed;
+    text-align: center;
     width: 33.33%; // older browsers
     width: calc(100% / 3);
-    text-align: center;
     margin-bottom: $spacing-med;
   }
 
   &__img {
     max-width: 13rem;
     margin-bottom: $spacing-xsml;
+
     @include mobile {
       width: 10rem;
     }
@@ -383,18 +382,18 @@ Components
 
 .projects {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
 
   &__item {
-    margin: 0 calc(#{$spacing-med}/ 2) $spacing-med;
-    padding-bottom: $spacing-med;
     text-align: center;
-    border-radius: 0.6rem;
+    padding-bottom: $spacing-med;
+    margin: 0 calc(#{$spacing-med}/ 2) $spacing-med;
     overflow: hidden;
     background-color: $primary-lightest;
-    box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.1);
+    border-radius: 0.6rem;
     border-bottom: 0.6rem solid $primary-accent;
+    box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2);
   }
 
   &__img {
@@ -403,30 +402,33 @@ Components
 
   &__name {
     font-size: 2.7rem;
-    margin-bottom: $spacing-sml;
     font-weight: 400;
+    margin-bottom: $spacing-sml;
+    color: $primary-darkest;
   }
 
   &__desc {
     font-size: 2rem;
     font-weight: 300;
-    color: $primary-darker;
     margin-bottom: $spacing-sml;
-  }
-
-  &__ctas {
-    text-align: center;
+    color: $primary-darker;
   }
 }
 
 .contact {
   width: 65%;
 
+  @include mobile {
+    text-align: center;
+    width: 100%;
+    padding-bottom: $spacing-med;
+  }
+
   &__header {
-    color: $primary-lightest;
     font-size: 5rem;
     font-weight: 400;
     margin-bottom: $spacing-med;
+    color: $primary-lightest;
 
     @include mobile {
       font-size: 4rem;
@@ -435,52 +437,41 @@ Components
 
   &__txt {
     font-size: 2.5rem;
-    color: $primary-dark;
-    margin-bottom: $spacing-med;
     font-weight: 300;
-  }
-
-  @include mobile {
-    width: 100%;
-    text-align: center;
-    padding-bottom: $spacing-med;
+    margin-bottom: $spacing-med;
+    color: $primary-dark;
   }
 }
 
 .social-links {
-  flex: 1;
-
   &__item {
     display: flex;
     align-items: center;
     padding: 1.8rem 0;
 
     &:hover {
-      cursor: pointer;
-      & > * {
+      & * {
         color: $primary-lightest;
       }
 
-      & > img {
-        transform: translateY(-3px);
+      & img {
         filter: invert(1);
+        transform: translateY(-3px);
       }
     }
   }
 
   &__img {
     width: 2.3rem;
-    margin-right: 1.3rem;
+    margin-right: $spacing-xsml;
     filter: invert(0.5); // css filters to style svgs thru img tags
     transition: all ease-out 0.2s;
   }
 
   &__link {
-    text-decoration: none;
-    color: $primary-dark;
-    font-weight: 500;
     font-size: 2.3rem;
-    text-transform: uppercase;
+    font-weight: 500;
+    color: $primary-dark;
     transition: all ease-out 0.2s;
   }
 }
@@ -503,7 +494,6 @@ Components
 
 .btn {
   display: inline-block;
-  text-decoration: none;
   background-color: $primary-accent;
   color: $primary-lightest;
   transition: all 0.2s;
