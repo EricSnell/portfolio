@@ -131,6 +131,7 @@ Components
     position: fixed;
     width: 100%;
     box-shadow: 0 10px 35px 0 rgba(0, 0, 0, 0.4);
+    z-index: 1000;
   }
 
   &__inner {
@@ -593,9 +594,11 @@ label[for="toggle-menu"] {
   transition: all 0.2s ease-out;
 
   @include mobile {
+    position: fixed;
     left: 0;
     width: 100%;
     justify-content: center;
+    z-index: 1001;
     transform: translateX(0);
   }
 

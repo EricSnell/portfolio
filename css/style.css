@@ -95,6 +95,7 @@ Components
     width: 100%;
     -webkit-box-shadow: 0 10px 35px 0 rgba(0, 0, 0, 0.4);
             box-shadow: 0 10px 35px 0 rgba(0, 0, 0, 0.4);
+    z-index: 1000;
   }
 }
 
@@ -677,11 +678,13 @@ label[for="toggle-menu"] {
 
 @media (max-width: 650px) {
   .form {
+    position: fixed;
     left: 0;
     width: 100%;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    z-index: 1001;
     -webkit-transform: translateX(0);
             transform: translateX(0);
   }
