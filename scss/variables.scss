@@ -1,0 +1,22 @@
+// Colors
+$primary-accent: #4b6cc1;
+$primary-lightest: #ffffff;
+$primary-light: #f6f6f6;
+$primary-dark: #919191;
+$primary-darker: #5e5e5e;
+$primary-darkest: #191a1d;
+
+// Layout
+$spacing-xsml: 1.5rem;
+$spacing-sml: 2.5rem;
+$spacing-med: 4rem;
+$spacing-lrg: calc(#{$spacing-med * 2});
+$spacing-xlrg: calc(#{$spacing-lrg} + #{$spacing-med});
+$content-width: 100rem;
+
+// Animations
+$transition-default: all ease-out 0.2s;
+
+// Breakpoints
+$max-mobile-width: 650px;
+$max-tablet-width: 995px;

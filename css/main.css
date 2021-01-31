@@ -41,11 +41,6 @@ a:hover {
   cursor: pointer;
 }
 
-/***************
-
-Components
-
-****************/
 .site-section {
   padding: calc(8rem) 1rem;
 }
@@ -576,76 +571,6 @@ label[for="toggle-menu"] {
   }
 }
 
-.site-footer {
-  padding: 4rem 0;
-  background-color: #101114;
-}
-
-.site-footer__inner {
-  text-align: center;
-}
-
-.site-footer__copyright {
-  font-size: 1.8rem;
-  font-weight: 300;
-  color: #919191;
-}
-
-.btn {
-  display: inline-block;
-  border: 2px solid #4b6cc1;
-  color: #ffffff;
-  background-color: #4b6cc1;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
-}
-
-.btn:hover {
-  background-color: transparent;
-}
-
-.btn--large {
-  font-size: 3rem;
-  padding: 2.3rem 4rem;
-  border-radius: 5rem;
-}
-
-.btn--large:hover {
-  -webkit-box-shadow: 0 0 15px 3px rgba(75, 108, 193, 0.3);
-          box-shadow: 0 0 15px 3px rgba(75, 108, 193, 0.3);
-}
-
-@media (max-width: 650px) {
-  .btn--large {
-    padding: 2rem 3.3rem;
-    font-size: 2rem;
-  }
-}
-
-.btn--small {
-  font-size: 2rem;
-  padding: 1.5rem 5rem;
-  margin: 0 1rem;
-  border: none;
-  border-radius: 3rem;
-  color: #191a1d;
-  background-color: transparent;
-  -webkit-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
-}
-
-.btn--small:hover {
-  color: #ffffff;
-}
-
-.btn--hov-accent:hover {
-  background-color: #4b6cc1;
-}
-
-.btn--hov-dark:hover {
-  background-color: #191a1d;
-}
-
 .form {
   position: absolute;
   top: 0;
@@ -789,6 +714,76 @@ label[for="toggle-contactform"] {
 
 #toggle-contactform:checked ~ label[for="toggle-contactform"] {
   opacity: 0;
+}
+
+.site-footer {
+  padding: 4rem 0;
+  background-color: #101114;
+}
+
+.site-footer__inner {
+  text-align: center;
+}
+
+.site-footer__copyright {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #919191;
+}
+
+.btn {
+  display: inline-block;
+  border: 2px solid #4b6cc1;
+  color: #ffffff;
+  background-color: #4b6cc1;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: transparent;
+}
+
+.btn--large {
+  font-size: 3rem;
+  padding: 2.3rem 4rem;
+  border-radius: 5rem;
+}
+
+.btn--large:hover {
+  -webkit-box-shadow: 0 0 15px 3px rgba(75, 108, 193, 0.3);
+          box-shadow: 0 0 15px 3px rgba(75, 108, 193, 0.3);
+}
+
+@media (max-width: 650px) {
+  .btn--large {
+    padding: 2rem 3.3rem;
+    font-size: 2rem;
+  }
+}
+
+.btn--small {
+  font-size: 2rem;
+  padding: 1.5rem 5rem;
+  margin: 0 1rem;
+  border: none;
+  border-radius: 3rem;
+  color: #191a1d;
+  background-color: transparent;
+  -webkit-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.btn--small:hover {
+  color: #ffffff;
+}
+
+.btn--hov-accent:hover {
+  background-color: #4b6cc1;
+}
+
+.btn--hov-dark:hover {
+  background-color: #191a1d;
 }
 
 .slanted-bottom {

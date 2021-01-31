@@ -1,0 +1,32 @@
+.site-section {
+  padding: $spacing-lrg 1rem;
+
+  &--light {
+    background-color: $primary-light;
+  }
+
+  &--dark {
+    background-color: $primary-darkest;
+  }
+
+  &__inner {
+    max-width: $content-width;
+    margin: 0 auto;
+  }
+
+  &__header {
+    padding-bottom: $spacing-med;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 500;
+    color: $primary-darker;
+
+    @include mobile {
+      font-size: 3rem;
+    }
+  }
+
+  &:last-of-type {
+    padding: calc(#{$spacing-lrg} * 1.8) $spacing-sml;
+  }
+}

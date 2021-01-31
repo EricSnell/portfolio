@@ -1,0 +1,43 @@
+.projects {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &__item {
+    text-align: center;
+    padding-bottom: $spacing-med;
+    margin: 0 calc(#{$spacing-med}/ 2) $spacing-med;
+    overflow: hidden;
+    background-color: $primary-lightest;
+    border-radius: 0.6rem;
+    border-bottom: 0.6rem solid $primary-accent;
+    box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.2);
+  }
+
+  &__img {
+    width: 100%;
+    margin-bottom: $spacing-med;
+  }
+
+  &__name {
+    font-size: 2.7rem;
+    font-weight: 400;
+    margin-bottom: $spacing-sml;
+    color: $primary-darkest;
+
+    @include mobile {
+      font-size: 2.2rem;
+    }
+  }
+
+  &__desc {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: $spacing-sml;
+    color: $primary-darker;
+
+    @include mobile {
+      font-size: 1.8rem;
+    }
+  }
+}

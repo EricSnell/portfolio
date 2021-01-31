@@ -1,0 +1,86 @@
+.site-hero {
+  padding: $spacing-xlrg $spacing-sml;
+  background-color: $primary-darkest;
+
+  @include mobile {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 105rem;
+    margin: 0 auto;
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+}
+
+.about {
+  max-width: 60rem;
+
+  @include mobile {
+    order: 2;
+    text-align: center;
+  }
+  @include tablet {
+    order: 2;
+    text-align: center;
+  }
+
+  &__header {
+    font-size: 7rem;
+    font-weight: 400;
+    margin-bottom: $spacing-med;
+    color: $primary-lightest;
+
+    &::after {
+      content: " \1F44B";
+      font-size: inherit;
+    }
+
+    @include mobile {
+      font-size: 3.5rem;
+      margin-bottom: $spacing-xsml;
+    }
+  }
+
+  &__txt {
+    font-size: 2.8rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: $spacing-med;
+    color: $primary-dark;
+
+    @include mobile {
+      font-size: 2.5rem;
+      max-width: 45rem;
+      margin-bottom: $spacing-med;
+    }
+  }
+
+  &__img {
+    width: 37rem;
+    flex-shrink: 0;
+
+    @include mobile {
+      order: 1;
+      width: 22rem;
+      margin-bottom: $spacing-sml;
+    }
+
+    @include tablet {
+      order: 1;
+      margin-bottom: $spacing-med;
+    }
+  }
+}

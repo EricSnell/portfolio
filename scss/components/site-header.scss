@@ -1,0 +1,48 @@
+.site-header {
+  background-color: $primary-darkest;
+
+  @include mobile {
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 10px 35px 0 rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: $spacing-sml;
+
+    @include mobile {
+      padding: 1.3rem;
+    }
+  }
+
+  .site-header__logo {
+    color: $primary-lightest;
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 0.25rem;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 25%;
+      padding: 0.3rem 0;
+      margin-top: $spacing-xsml;
+      border-radius: 0.3rem;
+      background-color: $primary-accent;
+
+      @include mobile {
+        margin-top: 0.9rem;
+        padding: 0.2rem;
+      }
+    }
+
+    @include mobile {
+      font-size: 1.6rem;
+    }
+  }
+}
