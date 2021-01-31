@@ -35,17 +35,9 @@ html {
   text-decoration: none;
 }
 
-html,
-body {
+html {
   height: 100%;
   overflow-x: hidden;
-}
-
-@media (max-width: 650px) {
-  html,
-  body {
-    height: auto;
-  }
 }
 
 a:hover {

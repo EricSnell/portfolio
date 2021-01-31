@@ -75,14 +75,9 @@ html {
   text-decoration: none;
 }
 
-html,
-body {
+html {
   height: 100%;
   overflow-x: hidden;
-
-  @include mobile {
-    height: auto;
-  }
 }
 
 a:hover {
