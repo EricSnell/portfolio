@@ -139,6 +139,10 @@ Components
     max-width: 120rem;
     margin: 0 auto;
     padding: $spacing-sml;
+
+    @include mobile {
+      padding: 1.3rem;
+    }
   }
 
   .site-header__logo {
@@ -155,6 +159,15 @@ Components
       margin-top: $spacing-xsml;
       border-radius: 0.3rem;
       background-color: $primary-accent;
+
+      @include mobile {
+        margin-top: 0.9rem;
+        padding: 0.2rem;
+      }
+    }
+
+    @include mobile {
+      font-size: 1.6rem;
     }
   }
 }
@@ -197,8 +210,8 @@ Components
 
     @include mobile {
       text-align: center;
-      font-size: 3rem;
-      padding: 1.5rem 0;
+      font-size: 1.8rem;
+      padding: 2rem 0;
       border-bottom: 3px solid #eee;
 
       &:hover {
@@ -230,15 +243,14 @@ Components
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 4.5rem;
+    justify-content: space-around;
+    height: 2.5rem;
     z-index: 100;
   }
 
   &__line {
-    width: 4rem;
-    padding: 0.25rem 0;
+    width: 3rem;
+    padding: 0.15rem 0;
     background-color: $primary-lightest;
     border-radius: 0.3rem;
   }
@@ -261,6 +273,11 @@ Components
       transform: scaleY(1);
     }
   }
+}
+
+label[for="toggle-menu"] {
+  display: flex;
+  align-items: center;
 }
 
 .site-hero {
@@ -508,6 +525,11 @@ Components
 
     &:hover {
       box-shadow: 0 0 15px 3px rgba(75, 108, 193, 0.3);
+    }
+
+    @include mobile {
+      padding: 2rem 3.3rem;
+      font-size: 2rem;
     }
   }
 
