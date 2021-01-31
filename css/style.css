@@ -18,8 +18,10 @@ html {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-size: 62.5%;
+  height: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 *,
@@ -33,11 +35,6 @@ html {
           box-sizing: inherit;
   list-style: none;
   text-decoration: none;
-}
-
-html {
-  height: 100%;
-  overflow-x: hidden;
 }
 
 a:hover {
