@@ -44,7 +44,6 @@ body {
 @media (max-width: 650px) {
   html,
   body {
-    height: auto;
     overflow-x: auto;
   }
 }

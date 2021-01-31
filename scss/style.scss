@@ -81,7 +81,6 @@ body {
   overflow-x: hidden;
 
   @include mobile {
-    height: auto;
     overflow-x: auto;
   }
 }
