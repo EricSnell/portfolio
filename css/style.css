@@ -41,6 +41,13 @@ body {
   overflow-x: hidden;
 }
 
+@media (max-width: 650px) {
+  html,
+  body {
+    overflow-x: auto;
+  }
+}
+
 a:hover {
   cursor: pointer;
 }
