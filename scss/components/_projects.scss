@@ -4,6 +4,7 @@
   flex-wrap: wrap;
 
   &__item {
+    width: 42rem;
     text-align: center;
     padding-bottom: $spacing-med;
     margin: 0 calc(#{$spacing-med}/ 2) $spacing-med;
@@ -31,8 +32,10 @@
   }
 
   &__desc {
+    text-align: left;
     font-size: 2rem;
     font-weight: 300;
+    padding: 0 $spacing-sml;
     margin-bottom: $spacing-sml;
     color: $primary-darker;
 
