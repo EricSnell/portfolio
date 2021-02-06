@@ -49,14 +49,39 @@
 
   &__link {
     color: inherit;
+    position: relative;
+    transition: $transition-default;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      display: block;
+      width: 100%;
+      padding: 0.2rem 0;
+      border-radius: 0.3rem;
+      background: $primary-accent;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: $transition-default;
+    }
 
     &:hover {
       color: $primary-lightest;
+
+      &::after {
+        transform: scaleX(1);
+      }
     }
 
     @include mobile {
       &:hover {
         color: inherit;
+
+        &::after {
+          transform: scaleX(0); // no animation in mobile
+        }
       }
     }
   }

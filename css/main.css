@@ -191,15 +191,45 @@ a:hover {
 
 .site-menu__link {
   color: inherit;
+  position: relative;
+  -webkit-transition: all ease-out 0.2s;
+  transition: all ease-out 0.2s;
+}
+
+.site-menu__link::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: block;
+  width: 100%;
+  padding: 0.2rem 0;
+  border-radius: 0.3rem;
+  background: #4b6cc1;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: all ease-out 0.2s;
+  transition: all ease-out 0.2s;
 }
 
 .site-menu__link:hover {
   color: #ffffff;
 }
 
+.site-menu__link:hover::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
 @media (max-width: 650px) {
   .site-menu__link:hover {
     color: inherit;
+  }
+  .site-menu__link:hover::after {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
   }
 }
 
