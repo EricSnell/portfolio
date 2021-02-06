@@ -27,6 +27,9 @@
 
 .about {
   max-width: 60rem;
+  transition: $transition-default;
+
+  @include animation-slideUp(0.8s);
 
   @include mobile {
     order: 2;
@@ -71,6 +74,9 @@
   &__img {
     width: 37rem;
     flex-shrink: 0;
+    transition: $transition-default;
+
+    @include animation-slideUp(0s);
 
     @include mobile {
       order: 1;

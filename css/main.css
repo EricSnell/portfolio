@@ -26,6 +26,32 @@ a:hover {
   cursor: pointer;
 }
 
+@-webkit-keyframes slideUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(2.6rem);
+            transform: translateY(2.6rem);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(2.6rem);
+            transform: translateY(2.6rem);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
 .site-section {
   padding: calc(8rem) 1rem;
 }
@@ -339,6 +365,15 @@ label[for="toggle-menu"] {
 
 .about {
   max-width: 60rem;
+  -webkit-transition: all ease-out 0.2s;
+  transition: all ease-out 0.2s;
+  opacity: 0;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  -webkit-animation: slideUp ease-out 0.8s 0.8s;
+          animation: slideUp ease-out 0.8s 0.8s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 @media (max-width: 650px) {
@@ -398,6 +433,15 @@ label[for="toggle-menu"] {
   width: 37rem;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  -webkit-transition: all ease-out 0.2s;
+  transition: all ease-out 0.2s;
+  opacity: 0;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  -webkit-animation: slideUp ease-out 0.8s 0s;
+          animation: slideUp ease-out 0.8s 0s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 @media (max-width: 650px) {

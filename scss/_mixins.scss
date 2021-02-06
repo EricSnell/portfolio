@@ -13,3 +13,9 @@
     @content;
   }
 }
+@mixin animation-slideUp($delay) {
+  opacity: 0;
+  transform: translateY(0%);
+  animation: slideUp ease-out 0.8s $delay;
+  animation-fill-mode: forwards;
+}

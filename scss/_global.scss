@@ -23,3 +23,14 @@ html {
 a:hover {
   cursor: pointer;
 }
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(2.6rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
